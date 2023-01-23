@@ -4,7 +4,7 @@
 - CSS
 - JS
 ## In-Class Assignments
-- ICA1
+- [ICA1](https://github.com/MaxMosier/MaxMosier/blob/ab7533bbc859455b66af315fb005bfd8188c3f4e/ica/ICA1%20%E2%80%93%20How%20to%20Search%20%E2%80%93%20Maximillian%20Mosier-1.pdf)
 - ICA2
 - ICA3
 - ICA4
