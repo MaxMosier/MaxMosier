@@ -21,7 +21,7 @@
 - ICA15
 ## Weekly Assignments
 - [WA1](https://maxmosier.github.io/MaxMosier/wa/wa1.html)
-- WA2
+- [WA2](https://maxmosier.github.io/MaxMosier/wa/wa2.html)
 - WA3
 - WA4
 - WA5
