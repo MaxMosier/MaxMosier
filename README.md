@@ -5,7 +5,7 @@
 - JS
 ## In-Class Assignments
 - [ICA1](https://github.com/MaxMosier/MaxMosier/blob/ab7533bbc859455b66af315fb005bfd8188c3f4e/ica/ICA1%20%E2%80%93%20How%20to%20Search%20%E2%80%93%20Maximillian%20Mosier-1.pdf)
-- ICA2
+- [ICA2](https://github.com/MaxMosier/MaxMosier/blob/5a68d4d2aefe19513ec558e1784051aa0068cefa/ica/ICA2%20--%20Exploring%20Directory%20Structures%20(Week%202)%20-%20Maximillian%20Mosier.pdf)
 - ICA3
 - ICA4
 - ICA5
