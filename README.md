@@ -9,7 +9,7 @@
 - ICA3
   - [Part 1](https://maxmosier.github.io/MaxMosier/ica/ica3a.html)
   - [Part 2](https://maxmosier.github.io/MaxMosier/ica/ica3b.html)
-- [ICA4](https://maxmosiergithub.io/MaxMosier/ica/ica4.html)
+- [ICA4](https://maxmosier.github.io/MaxMosier/ica/ica4.html)
 - ICA5
 - ICA6
 - ICA7
