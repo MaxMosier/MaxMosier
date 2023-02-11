@@ -22,21 +22,9 @@ html {
   border-radius: 1.5em;
 }
 
-.card header footer{
-    height: 5em;
+.card header, .card footer{
+    height: 3em;
     padding: 1em;
-    
-
-}
-
-article{
-    height: 12em;
-    color: rgba(0,0,0,0.2);
-}
-
-.card header{
-  background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,0));
-  border-radius: 1.5em 1.5em 0 0;
 }
 
 .card footer{
@@ -44,25 +32,36 @@ article{
   border-radius: 0 0 1.5em 1.5em;
 }
 
-.card article img{
-  max-height: 100%;
-  float: right;
+.card footer p {
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+.card header{
+  background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,0));
+  border-radius: 1.5em 1.5em 0 0;
+}
+
+.card header h2{
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+.card h2, .card p {
+  margin: 0em;
+}
+
+.card article{
+    height: 12em;
+    background-color: rgba(0,0,0,0.35);
 }
 
 .card article p{
-    padding-left: 2em;
+  color: gainsboro;
+  padding: 1em;
 }
 
-h2, p {
-    margin: 0em;
-}
-
-footer p {
-    font-size: 1.5em;
-    line-height: 2em;
-}
-
-h2{
-    font-size: 2em;
-    line-height: 1.5em;
+.card article img{
+  max-height: 100%;
+  float: right;
 }
