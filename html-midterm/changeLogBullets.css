@@ -1,0 +1,20 @@
+ul {
+    list-style-position: outside;
+}
+
+.add{ 
+
+    list-style-type: "+  "; 
+}
+
+.sub{
+    list-style-type: "-  ";
+}
+
+.alt{ /* ALT stands for "alterations" */
+    list-style-type: "~  ";
+}
+
+.unknown{
+    list-style-type: "?  ";
+}
