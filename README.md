@@ -25,7 +25,7 @@
 - [WA1](https://maxmosier.github.io/MaxMosier/wa/wa1.html)
 - [WA2](https://maxmosier.github.io/MaxMosier/wa/wa2.html)
 - [WA3](https://maxmosier.github.io/MaxMosier/wa/wa3.html)
-- WA4
+- [WA4](https://maxmosier.github.io/MaxMosier/wa/wa4.html)
 - WA5
 - WA6
 - WA7
