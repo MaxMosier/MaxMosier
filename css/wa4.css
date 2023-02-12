@@ -13,7 +13,7 @@ html {
 /* Selectors to be matched up with rulesets */
 /* Rulesets to be matched up with selectors */
 
-.card{
+.card, .myCard{
   width: 35em;
   height: 22em;
   margin: 5em auto;
@@ -22,7 +22,7 @@ html {
   border-radius: 1.5em;
 }
 
-.card header, .card footer{
+.card header, .card footer, .myCard header, .myCard footer{
     height: 3em;
     padding: 1em;
 }
@@ -32,7 +32,7 @@ html {
   border-radius: 0 0 1.5em 1.5em;
 }
 
-.card footer p {
+.card footer p , .myCard footer p{
   font-size: 1.5em;
   line-height: 2em;
 }
@@ -42,12 +42,12 @@ html {
   border-radius: 1.5em 1.5em 0 0;
 }
 
-.card header h2{
+.card header h2, .myCard header h2{
   font-size: 2em;
   line-height: 1.5em;
 }
 
-.card h2, .card p {
+.card h2, .card p, .myCard h2, .myCard p{
   margin: 0em;
 }
 
@@ -64,4 +64,46 @@ html {
 .card article img{
   max-height: 100%;
   float: right;
+}
+
+/* My stuff: */
+
+.myCard { /* Only the color differs, and since this comes later, it will get priority! */
+  background-color: maroon;
+  /* 15.71 percent used to center gradient on image: 
+  Image is square, with same heigth of article element, 22em.*/
+  background-image: radial-gradient(circle at 15.71% 50%,rgba(0,0,0,0),rgba(0,0,0,0.5));
+}
+
+.myCard article p{
+  color:aliceblue;
+  padding: 3.5em;
+}
+
+.myCard article{
+  height: 12em;
+  /* background-color: rgba(0,0,0,0.1); */
+}
+
+.myCard article img{
+  max-height: 100%;
+  float:left;
+}
+
+.myCard header{
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 1.5 1.5 0 0;
+}
+
+.myCard header h2{
+  color: aliceblue;
+}
+
+.myCard footer{
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 0 0 1.5 1.5;
+}
+
+.myCard footer p{
+  color: aliceblue;
 }
