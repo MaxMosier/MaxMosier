@@ -18,3 +18,7 @@ ul {
 .unknown{
     list-style-type: "?  ";
 }
+
+.ukAlt{
+    list-style-type: "?~  ";
+}
