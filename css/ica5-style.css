@@ -16,7 +16,11 @@
     height: 297mm;
     margin: 20px auto;
     position: relative;
-  }
+    background: url("../img/ica5/top-image.png") no-repeat left top,
+                url("../img/ica5/bottom-image.png") no-repeat left bottom;
+    border: solid red;
+    border-width: 1mm 0 1mm 0;
+}
   
   address {
     position: absolute;
@@ -36,6 +40,8 @@
     padding: 44px 0;
     color: white;
     text-shadow: 1px 1px 1px black;
+    background: url("../img/ica5/logo.png");
   }
   
   /* Your CSS below here */
+
