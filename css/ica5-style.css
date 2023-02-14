@@ -41,6 +41,8 @@
     color: white;
     text-shadow: 1px 1px 1px black;
     background: url("../img/ica5/logo.png");
+    border-radius: 64px;
+    box-shadow: 3px 3px 3px black;
   }
   
   /* Your CSS below here */
