@@ -8,7 +8,8 @@
   
   body {
     margin: 0;
-    background: #ccc;
+    /* The instructions said to change the background to white, so I did. Original body color was #cccccc */
+    background: #ffffff;
   }
   
   article {
@@ -17,9 +18,10 @@
     margin: 20px auto;
     position: relative;
     /* linear-gradient*/
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.2)),
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0) 15%, rgba(0,0,0,0) 85%, rgba(0,0,0,0.2)),
                 url("../img/ica5/top-image.png") no-repeat left top,
                 url("../img/ica5/bottom-image.png") no-repeat left bottom;
+    background-size: 100%;
     border: solid red;
     border-width: 1mm 0 1mm 0;
 }
@@ -42,8 +44,13 @@
     text-align: center;
     padding: 44px 0;
     color: white;
+    
+    /*Mentioned in class: Add a shadow to the text as well*/
     text-shadow: 1px 1px 1px black;
+
     background: url("../img/ica5/logo.png");
+
+    /* Make the drop shadow*/
     border-radius: 64px;
     box-shadow: 3px 3px 3px black;
   }
