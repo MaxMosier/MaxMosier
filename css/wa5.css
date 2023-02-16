@@ -18,7 +18,7 @@ img #background{
 }
 
 #dataDisplay {
-    background-color: rgba(200,200,200,0.7);
+    background-color: rgba(255,255,255,0.5);
     border-radius: 20px;
     backdrop-filter: blur(10px);
     color: black;
