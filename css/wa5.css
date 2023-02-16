@@ -17,8 +17,16 @@ img #background{
 }
 
 #dataDisplay {
+    background-color: rgba(200,200,200,0.7);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
     color: cyan;
     position:fixed;
     top: 50px;
     right: 50px;
+
+}
+
+h2 .infoBox{
+    font-weight: bold;
 }
