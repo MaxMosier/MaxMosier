@@ -2,13 +2,11 @@ html, body{
     height: 100%;
     margin: 0;
     padding: 0;
+    font-size: 60px;
 }
-img {
-    margin: 0;
-    padding: 0;
+img #background{
     min-width: 100%;
     min-height: 100%;
-    font-size: 60px;
 }
 
 #logo {
