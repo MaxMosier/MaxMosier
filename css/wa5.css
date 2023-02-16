@@ -2,25 +2,26 @@ html, body{
     height: 100%;
     margin: 0;
     padding: 0;
-    font-size: 60px;
+    font-size: 20px;
 }
 img #background{
     min-width: 100%;
     min-height: 100%;
 }
 
-#logo {
-    color: red;
+#dataDisplay {
+    color: black;
     position: fixed;
     top: 50px;
     left: 50px;
+    padding: 0.5em;
 }
 
-#dataDisplay {
+#logo {
     background-color: rgba(200,200,200,0.7);
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    color: cyan;
+    color: black;
     position:fixed;
     top: 50px;
     right: 50px;
