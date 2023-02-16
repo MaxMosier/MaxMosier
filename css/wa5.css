@@ -8,12 +8,19 @@ img {
     padding: 0;
     min-width: 100%;
     min-height: 100%;
+    font-size: 60px;
 }
 
 #logo {
     color: red;
+    position: fixed;
+    top: 50px;
+    left: 50px;
 }
 
 #dataDisplay {
     color: cyan;
+    position:fixed;
+    top: 50px;
+    right: 50px;
 }
