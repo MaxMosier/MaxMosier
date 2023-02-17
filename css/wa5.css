@@ -1,12 +1,9 @@
 html, body{
+    font-family: Helvetica, Arial, sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
-    font-size: 20px;
-}
-img #background{
-    min-width: 100%;
-    min-height: 100%;
+    font-size: 30px;
 }
 
 #logo {
@@ -14,21 +11,39 @@ img #background{
     position: fixed;
     top: 50px;
     right: 50px;
-    padding: 0.5em;
+    padding: 5em;
 }
 
 #dataDisplay {
-    background-color: rgba(255,255,255,0.5);
-    -webkit-backdrop-filter: blur(10px);
+    /*Box*/
+    background-color: rgba(100,100,100,.3);
     border-radius: 20px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 1em 1em rgba(255, 255, 255, 0.1) inset;
+
+    /*Text*/
     color: black;
+    font-weight: bold;
+    line-height: 2em;
+
+    /*Geometry*/
     position:fixed;
+    padding: 0em 1em;
     top: 50px;
     left: 50px;
+
 }
 
-h2 .infoBox{
+#infoBox{
     font-weight: bold;
     font-size: 2em;
+}
+
+span.kanji{
+    color:red;
+}
+#back{
+    
+    min-height: 100%;
+    min-width: 100%;
 }
