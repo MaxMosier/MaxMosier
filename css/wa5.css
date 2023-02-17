@@ -1,49 +1,96 @@
 html, body{
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     height: 100%;
     margin: 0;
     padding: 0;
-    font-size: 30px;
+    font-size: 45px;
+    background-color: black;
 }
 
-#logo {
-    color: black;
+/*The background image's properties. 
+  I added max height and width because I liked the effects better that way.*/
+#back{
+    /* min-height: 100%; */
+    max-height: 100%;
+    min-width: 100%;
+}
+
+
+/*Formatting for the logo (Top right)*/
+.logo {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: bold;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    line-height: 0.5em;
+    text-align: center;
+
+    background-color: rgba(100,100,255,0.9);
+    padding: 0.3em;
+    border-radius: 0.1em;
+
     position: fixed;
-    top: 50px;
-    right: 50px;
-    padding: 5em;
+    top: 1em;
+    right: 1em;
 }
 
+/*Note to self: 0.5em below is relative to size of .logo's size*/
+.logo > span{
+    font-size:0.5em;
+    font-style: italic;
+    line-height: 0em;
+}
+
+/*Formatting for the "This Week" box (The overall container)*/
 #dataDisplay {
     /*Box*/
-    background-color: rgba(100,100,100,.3);
+    background-color: rgba(192, 192, 192, 0.5);
     border-radius: 20px;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 1em 1em rgba(255, 255, 255, 0.1) inset;
+    box-shadow: 0 0 1em 1em rgba(0, 0, 0, 0.3);
 
     /*Text*/
-    color: black;
+    color: rgb(0, 0, 0);
     font-weight: bold;
-    line-height: 2em;
+    line-height: 1.5em;
+    text-shadow: rgba(0,0,0,0.3) 0 0 0.2em;
 
     /*Geometry*/
     position:fixed;
     padding: 0em 1em;
-    top: 50px;
-    left: 50px;
+    top: 50%;
+    left: 1.11em;
+    top: 50%;
+    transform: translateY(-50%);
+    /* ^^ Centered vertically (proportionally), but left offset is defined by font size.*/
 
 }
 
-#infoBox{
+/*The "This Week" title*/
+#dataTitle{
     font-weight: bold;
     font-size: 2em;
+    line-height: 0.5em;
+    margin-bottom: 0em;
 }
 
-span.kanji{
-    color:red;
+/*Shifts the weekdays a little to the left, giving them a 1em indent*/
+#weekDays{
+    padding-left: 1em;
 }
-#back{
-    
-    min-height: 100%;
-    min-width: 100%;
+
+/*Colors the kanji, and changed the font.
+  There's something I like about them being in a gothic font, with the rest of the text in Times*/
+span.kanji{
+    color:rgb(188, 239, 255);
+    font-family: Helvetica;
+}
+
+/*Slight colorations for the lows and highs*/
+span.highTemp{
+    color:rgb(72, 39, 39);
+}
+span.lowTemp{
+    color:rgb(15, 15, 56);
 }

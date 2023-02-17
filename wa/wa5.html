@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Used "mul," since I've got two languages here -->
 <html lang="mul">
 <head>
     <meta charset="UTF-8">
@@ -7,22 +8,31 @@
     <title>Overlay - WA5</title>
     <link rel="stylesheet" href="../css/wa5.css">
 </head>
+
 <body>
-    <img id="back" src="../img/wa5/IMG_7278.jpeg">
-    <div id="logo">
-        This is gonna' be<br>
-        A logo!
+    <!-- Background image: -->
+    <img id="back" src="../img/wa5/somartist2.jpg">
+
+    <!-- Obnoxious company logo: -->
+    <div class="logo">
+        GENERIC
+        <span><br>COMPANY</span><br>
     </div>
+
+    <!-- Forecast: -->
     <div id="dataDisplay">
-        <h2 id="infoBox">This Week:</h2>
+        <h2 id="dataTitle">This Week:</h2>
         <p id="weekDays">
-            <span class="kanji">日</span> : -10&deg; <br>
-            <span class="kanji">月</span> : 2,000&deg;<br>
-            <span class="kanji">火</span> : 5&deg;<br>
-            <span class="kanji">水</span> : 5&deg;<br>
-            <span class="kanji">木</span> : 0&deg;<br>
-            <span class="kanji">金</span> : 20&deg;<br>
-            <span class="kanji">土</span> : 100,000&deg;<br>
+
+            <!-- I didn't add the degree units because it just cluttered things up, and since this was just for display, really-->
+
+            <span class="kanji">日</span> : <span class= "highTemp">52&deg;</span> / <span class="lowTemp">14&deg;</span><br>
+            <span class="kanji">月</span> : <span class= "highTemp">52&deg;</span> / <span class="lowTemp">28&deg;</span><br>
+            <span class="kanji">火</span> : <span class= "highTemp">53&deg;</span> / <span class="lowTemp">35&deg;</span><br>
+            <span class="kanji">水</span> : <span class= "highTemp">48&deg;</span> / <span class="lowTemp">32&deg;</span><br>
+            <span class="kanji">木</span> : <span class= "highTemp">55&deg;</span> / <span class="lowTemp">38&deg;</span><br>
+            <span class="kanji">金</span> : <span class= "highTemp">56&deg;</span> / <span class="lowTemp">24&deg;</span><br>
+            <span class="kanji">土</span> : <span class= "highTemp">27&deg;</span> / <span class="lowTemp">0&deg;</span> <br>
         </p>
     </div>
 
