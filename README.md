@@ -10,7 +10,7 @@
   - [Part 1](https://maxmosier.github.io/MaxMosier/ica/ica3a.html)
   - [Part 2](https://maxmosier.github.io/MaxMosier/ica/ica3b.html)
 - [ICA4](https://maxmosier.github.io/MaxMosier/ica/ica4.html)
-- ICA5
+- [ICA5](https://maxmosier.github.io/MaxMosier/ica/ica5.html)
 - ICA6
 - ICA7
 - ICA8
@@ -26,7 +26,7 @@
 - [WA2](https://maxmosier.github.io/MaxMosier/wa/wa2.html)
 - [WA3](https://maxmosier.github.io/MaxMosier/wa/wa3.html)
 - [WA4](https://maxmosier.github.io/MaxMosier/wa/wa4.html)
-- WA5
+- [WA5](https://maxmosier.github.io/MaxMosier/wa/wa5.html)
 - WA6
 - WA7
 - WA8
