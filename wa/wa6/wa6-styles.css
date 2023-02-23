@@ -34,6 +34,7 @@ nav ul {
     list-style: none;
     display: flex;
     flex-direction: row;
+    flex: auto;
 }
 
 nav a {
@@ -43,11 +44,13 @@ nav a {
 }
 
 .photos {
+    display: grid;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .feature {
+    float: left;
     width: 200px;
 }
