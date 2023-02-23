@@ -12,6 +12,20 @@ body {
   position: relative;
 }
 
+#text1 {
+  position: relative;
+  left: calc(100% + 1em);
+  /*  /\ /\ /\
+  Line it up to stat on the left of the box, and move it 1em further. 
+  I just thought this looked a bit cleaner, but didn't run the risk of a giant box
+  causing the text look too far away, in the event it becomes defined by non text-based unit
+
+  Center text vertically: It looked better to me with -1em, but my understanding says
+  it should be -0.5em...
+  \/ \/ \/  */
+  top: calc(50% - 0.5em);
+}
+
 #box2 {
   width: 73vw;
   height: 33vh;
@@ -24,10 +38,29 @@ body {
   background-color: mediumvioletred;
 }
 
+#text2 {
+  position: absolute;
+  bottom: -1em;
+  left: 0.25em; /* Given the current state of the document, this line is mostly optional.
+  Included anyways to give the text some space from the box's left side.*/
+}
+
 #box3 {
   position: sticky;
   width: 73vw;
   height: 175vh;
   border-radius: 10px;
   background-color: orangered;
+}
+
+#text3 {
+  position: sticky;
+  /* Questions to ask in the recitation this week: */
+  /* How do I get this to be 1em from the top of BOX3 when the top of box3 is within the viewport...
+           but 1em from the top of the VIEWPORT when the top of the box is above the viewport?*/
+  top: 0;
+  padding-top: 1em;
+  padding-left: 0.5em;
+  /*To achieve this with padding was the only thing I could think of that worked... */
+  /* Also, why does this not work when I remove the "top: 0;" line?*/
 }
