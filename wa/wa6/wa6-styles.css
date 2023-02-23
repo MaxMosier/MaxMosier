@@ -45,6 +45,7 @@ nav a {
 
 .photos {
     display: grid;
+    grid-template-columns: 1fr 1fr; /* Divides into 2 parts automatically. 2 columns*/
     list-style: none;
     margin: 0;
     padding: 0;
@@ -52,5 +53,7 @@ nav a {
 
 .feature {
     float: left;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
     width: 200px;
 }
