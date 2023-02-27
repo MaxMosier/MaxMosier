@@ -1,60 +1,123 @@
 body {
-    background-color: #fff;
-    color: #333;
-    margin: 0;
-    font: 1.2em / 1.2 Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  font: 1.2em / 1.2 Arial, Helvetica, sans-serif;
 }
+/* @media (max-width: 500px) {
+  body {
+    background-color: aquamarine;
+  }
+} */
 
 img {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
 .logo {
-    font-size: 200%;
-    padding: 50px 20px;
-    margin: 0 auto;
-    max-width: 980px;
+  font-size: 200%;
+  padding: 50px 20px;
+  margin: 0 auto;
+  max-width: 980px;
 }
 
 .grid {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 2fr 1fr;
+
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 980px;
+}
+@media (max-width: 500px) {
+  .grid {
+    display: grid; /* Kept as grid for consistency */
+    gap: 0; /* Padding provided by elements is enough to create a significant vertical gap. No additional needed! */
+    grid-template-columns: 1fr;
+
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1em;
     max-width: 980px;
+  }
 }
 
 nav {
-    background-color: #000;
-    padding: .5em;
-    position: sticky;
+  position: sticky;
+  top: 0;
+
+  background-color: #000;
+  padding: 0.5em;
 }
 
 nav ul {
+  display: flex;
+  flex-direction: row;
+  /* flex: auto; */
+  justify-content: space-between;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 500px) {
+  /* Basically make the nav list vertical with each element on a new line */
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    /* flex: auto; */
+
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    flex-direction: row;
-    flex: auto;
+  }
 }
 
 nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: .5em 1em;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em 0.5em; /* Changed horizontal padding from original because elements were auto line breaking before 500px width! */
 }
 
 .photos {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Divides into 2 parts automatically. 2 columns*/
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: grid;
+  gap: 1px; /* A bit small to me, but required by assignment description! */
+  grid-template-columns: 1fr 1fr;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 500px){
+  .photos {
+    --centering-padding: calc(100% - 400px); /* See explaination below on line 111 */
+    padding-left: calc(var(--centering-padding) / 2);
+    grid-template-columns: 1fr;
+  }
 }
 
 .feature {
-    float: left;
-    margin-right: 1em;
-    margin-bottom: 0.5em;
-    width: 200px;
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+  width: 200px; /* Specific value given by original template given */
+}
+@media (max-width: 500px){
+  .feature{
+    float: none;
+    width: auto;
+    margin: 0;
+    --centering-padding: calc(100% - 400px); /* The padding defined by this centers the image, as width: auto makes the image at most 400px. */
+    padding-left: calc(var(--centering-padding) / 2); /* This meant that when 500 >= viewport width >= 400px+2em (The padding of all grid elements),
+                                                        the image was, without this padding function, a bit to the left.*/
+  }
+}
+@media (max-width: calc(400px + 2em)) {
+  .feature {
+    padding: 0; /* Once the width:auto above kicks in and actually starts shrinking the image, padding is no longer required to center it.*/
+  }
+  .photos {
+    padding: 0; /* The same must be done for the gallery images. */
+  }
 }
