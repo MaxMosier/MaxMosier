@@ -16,7 +16,8 @@ body{
     height:20vh;
     position: relative;
     background-color: orangered;
-    animation: 4s infinite alternate box2move;
+    animation: 4s infinite forwards box2move;
+    animation-timing-function: linear;
 }
 
 @keyframes box2move{
@@ -30,13 +31,15 @@ body{
     }
     33.3%{
         background-color: #00ff00;
-    }
-    50%{
-        background-color: #00ffff;
         top: 10em;
         left: 17.3em;
     }
+    50%{
+        background-color: #00ffff;
+    }
     66.7%{
+        top: 20em;
+        left: 0em;
         background-color: #0000ff;
     }
     83.3%{
@@ -44,7 +47,7 @@ body{
     }
     to{
         background-color: #ff0000;
-        top: 20em;
+        top: 0em;
         left: 0em;
     }
 }
