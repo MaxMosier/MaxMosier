@@ -6,8 +6,10 @@ body{
     height: 20vh;
     background-color: indianred;
 
-    animation-duration: 1s;
-    animation-name: makePurple;
+
+    animation: 1s infinite alternate makePurple;
+    /* animation-duration: 1s;
+    animation-name: makePurple; */
 }
 @keyframes makePurple{
     to{
@@ -25,6 +27,9 @@ body{
 }
 
 @keyframes box2move{
+    from {
+        margin-left: 0;
+    }
     to{
         margin-left: 20em;
     }
