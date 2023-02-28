@@ -3,14 +3,14 @@ body{
 }
 #box1{
     width: 25vw;
-    height: 20vh;
+    height: 8vh;
     background-color: indianred;
     transition: width 0.75s ease-in-out, height 0.5s ease-in-out 0.9s;
 }
 #box1:hover{
     background-color: rebeccapurple;
     width: 35vw;
-    height: 25vw;
+    height: 14vw;
 }
 
 #box2{
