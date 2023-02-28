@@ -23,12 +23,27 @@ body{
     from {
         top: 0;
         left: 0;
+        background-color: red;
     }
-    66%{
+    16.7%{
+        background-color: #ffff00;
+    }
+    33.3%{
+        background-color: #00ff00;
+    }
+    50%{
+        background-color: #00ffff;
         top: 10em;
         left: 17.3em;
     }
+    66.7%{
+        background-color: #0000ff;
+    }
+    83.3%{
+        background-color: #ff00ff;
+    }
     to{
+        background-color: #ff0000;
         top: 20em;
         left: 0em;
     }
