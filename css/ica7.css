@@ -5,16 +5,27 @@ body{
     width: 25vw;
     height: 20vh;
     background-color: indianred;
-}
 
+    animation-duration: 1s;
+    animation-name: makePurple;
+}
+@keyframes makePurple{
+    to{
+        background-color: rebeccapurple;
+    }
+}
 
 #box2{
     width: 25vw;
     height:20vh;
     position: relative;
     background-color: orangered;
+    animation-duration: 2s;
+    animation-name: box2move;
 }
 
 @keyframes box2move{
-
+    to{
+        margin-left: 20em;
+    }
 }
