@@ -5,10 +5,12 @@ body{
     width: 25vw;
     height: 20vh;
     background-color: indianred;
-
+    transition-duration: width 1s, height 2.5s;
 }
 #box1:hover{
     background-color: rebeccapurple;
+    width: 40vw;
+    height: 40vw;
 }
 
 #box2{
