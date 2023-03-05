@@ -1,54 +1,80 @@
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(112, 37, 37);
-    font-family: Helvetica, Arial, sans-serif;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(112, 37, 37);
+  font-family: Helvetica, Arial, sans-serif;
 }
-nav{
-    /* height: 50vh; */
-    font-weight: bold;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height:40px;
-    background-color: rgb(244, 202, 122);
-    box-shadow: 0 0 0.7em rgba(244, 202, 122, 0.4);
+nav {
+  /* height: 50vh; */
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 40px;
+  background-color: rgb(244, 202, 122);
+  box-shadow: 0 0 0.7em rgba(244, 202, 122, 0.4);
 }
-nav a{
-    width:10vw;
-    text-align: center;
-    text-decoration: none;
-    color:rgb(19, 19, 19);
-    outline-offset: 0;
-    padding: 0.625em;
-    transition: 0.125s ease-in-out, background-color 0.25s ease-in-out, width 0.25s ease-out;
+nav a {
+  width: 10vw;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(19, 19, 19);
+  outline-offset: 0;
+  padding: 0.625em;
+  transition: 0.125s ease-in-out, background-color 0.25s ease-in-out,
+    width 0.25s ease-out;
 }
-nav a:hover{
-    background-color: rgb(212, 172, 97);
-    box-shadow: 0 0 3em rgba(244, 202, 122, 0.6);
-    /* , inset 0 0 0.2em rgb(212, 172, 97);  This was originally added to the end of the above line*/
-    /* padding: 0.125em */
-}
-
-
-h1{
-    color: rgb(244, 202, 122);
-    text-shadow: 0 0 10px rgba(244, 202, 122, 0.4);
+nav a:hover {
+  background-color: rgb(212, 172, 97);
+  box-shadow: 0 0 3em rgba(244, 202, 122, 0.6);
+  /* , inset 0 0 0.2em rgb(212, 172, 97);  This was originally added to the end of the above line*/
+  /* padding: 0.125em */
 }
 
-img{
-    width:30vw;
-    height: 30vh;
-    margin: 2em;
+h1 {
+  color: rgb(244, 202, 122);
+  text-shadow: 0 0 10px rgba(244, 202, 122, 0.4);
 }
 
-#red-ball{
-    background-color: rgb(255, 230, 197);
-    width: 20px;
-    height:20px;
+img {
+  width: 30vw;
+  height: 30vh;
+  margin: 2em;
+}
+
+#red-ball {
+  background-color: rgb(255, 230, 197);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  /* left: 5vw; */
+  top: 50vh;
+  animation: move 12s ease-in-out infinite forwards;
+}
+
+@keyframes move {
+  0% {
+    left: 20vw;
     border-radius: 50%;
-    position: absolute;
-    left:5vw;
-    top:0;
+  }
+  25% {
+    left: 80vw;
+    border-radius: 0%;
+    rotate: 45deg;
+  }
+  50% {
+    left: 20vw;
+    rotate: 135deg;
+  }
+  75%{
+    left: 80vw;
+    rotate: 180deg;
+    border-radius:50%;
+  }
+  100%{
+    left: 20vw;
+    rotate: 0deg;
+    border-radius:50%;
+  }
 }
