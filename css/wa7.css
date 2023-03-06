@@ -38,9 +38,19 @@ h1 {
 }
 
 img {
-  width: 30vw;
-  height: 30vh;
+  width: auto;
+  height: 50vh;
   margin: 2em;
+  animation: barAnimation 10s linear infinite forwards;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0.2) 5%, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 10%);
+}
+@keyframes barAnimation {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 50vh 0; /* Square image! */
+  }
 }
 
 #red-ball {
@@ -49,7 +59,7 @@ img {
   height: 20px;
   position: absolute;
   /* left: 5vw; */
-  top: 50vh;
+  top: 90vh;
   animation: move 12s ease-in-out infinite forwards;
 }
 
@@ -67,14 +77,14 @@ img {
     left: 20vw;
     rotate: 135deg;
   }
-  75%{
+  75% {
     left: 80vw;
     rotate: 180deg;
-    border-radius:50%;
+    border-radius: 50%;
   }
-  100%{
+  100% {
     left: 20vw;
     rotate: 0deg;
-    border-radius:50%;
+    border-radius: 50%;
   }
 }
