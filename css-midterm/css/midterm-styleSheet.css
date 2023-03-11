@@ -1,0 +1,15 @@
+html{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1vw;
+    --background-grey: 23;
+    background-color: rgb(var(--background-grey),var(--background-grey),var(--background-grey));
+}
+
+h1 {
+    --title-grey: 230;
+    color: rgb(var(--title-grey),var(--title-grey),var(--title-grey));
+    position: absolute;
+    top: 10vh;
+    left: 20vw;
+    
+}
