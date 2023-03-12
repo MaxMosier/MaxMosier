@@ -14,10 +14,11 @@ html {
     var(--darkened-greyVal),
     var(--darkened-greyVal)
   );
+  --default-grey: rgb(var(--text-grey), var(--text-grey), var(--text-grey));
   /* background-color: var(--background-greyColor); */
 
   background-image: radial-gradient(var(--background-greyColor), var(--background-darkened));
-  color: rgb(var(--text-grey), var(--text-grey), var(--text-grey));
+  color: var(--default-grey);
 
   --warning-line-angle: 45deg; /* Line angle */
 
@@ -52,7 +53,7 @@ h1 {
   padding: 0 var(--title-padding);
   margin: 0;
 }
-h1 #titleText:before{
+h1 .titleText:before{
     /* content: "Ṁ"; */
     content: "M";
     text-shadow: 0 0 10px #FFFFFF40;
@@ -70,8 +71,9 @@ h1 #titleText:before{
   
     height: 90vh;
   
+    /* filter: drop-shadow(0 0 10px #FFFFFF40); */
     opacity: 0.9;
-    filter: drop-shadow(0 0 10px #FFFFFF40);
+    filter: drop-shadow(0 0 10px var(--background-greyColor)) drop-shadow(0 0 30px var(--background-greyColor)) drop-shadow(0 0 50px var(--background-greyColor));
   }
 
 
@@ -95,7 +97,7 @@ ul{
 
 li{
     --othersOffset: 0em;
-
+    z-index: 10;
     /* Vertical Properties: */
     --total-spacing: 1em;
     --padded: 0.75em;
@@ -109,13 +111,16 @@ li{
   list-style-type: none;
 
   font-weight: bold;
+  font-kerning: none;
   width: 200%;
   mask-origin: padding-box;
   text-indent: 2em;
-  transition: background-position-x 0.5s ease-out; /* ease-out used to make it more "jumpy" */
+  transition: background-position-x 0.5s ease-out, text-shadow 0.25s ease-in-out, text-indent 0.75s ease-in-out; /* ease-out used to make gradient more "jumpy" */
 }
-li a{
+li a{ 
+    /* Make it so you can click on the whole block (Or at least, what's what I was trying to do... */
     display: block;
+    /* For some reason I can't determine, t */
     height: 100%;
     width: 100%;
 
@@ -139,12 +144,23 @@ li:nth-child(2n+1){
 }
 /* Hover properties for nav menu: */
 li:nth-child(2n):hover{
+    text-shadow: 0 0 1em rgba(var(--background-greyVal),var(--background-greyVal),var(--background-greyVal),0.6);
     background-position-x: 10em;
 }
 li:nth-child(2n+1):hover{
+    text-shadow: 0 0 1em rgb(var(--text-grey), var(--text-grey), var(--text-grey), 0.4);
     background-position-x: 10em;
 }
-
+li .shadow{
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    text-shadow: none;
+    z-index: 9;
+}
 
 .stripeBox {
   --warning-line-color: rgba(187, 87, 87, 0.8); /* Can be overwritten inline!*/
