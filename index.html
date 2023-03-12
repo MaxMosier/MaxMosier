@@ -8,9 +8,14 @@
     <title>Maximillian Mosier</title>
 </head>
 <body>
-    <div class="stripeBox" style="--vOff: 15%"></div> <!--2em is the height of the bars at the moment. Might make an inline way to pass this later-->
-    <div class="stripeBox" style="--vOff: 85%"></div>
-    <h1>Maximillian Mosier</h1>
+    <!--Outer two: -->
+    <div class="stripeBox" style="--vOff: 15%; --direction: 1;"></div>
+    <div class="stripeBox" style="--vOff: 85%; --direction: -1;"></div>
+
+    <!--Inner two:-->
+    <div class="stripeBox" style="--vOff: 35%; --direction: -1; --warning-line-color: rgba(187, 87, 87, 0.22);"></div>
+    <div class="stripeBox" style="--vOff: 65%; --direction: 1; --warning-line-color: rgba(187, 87, 87, 0.22);"></div>
+    <h1>MAXIMILLIAN MOSIER</h1>
     <img id="mImage" src="css-midterm/img/MBWI.png" alt="A stylized image of the letter M with a diamond shape above it">
     <nav>
         <ul style="--children: 5;">

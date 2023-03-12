@@ -12,7 +12,6 @@ html {
   color: rgb(var(--text-grey), var(--text-grey), var(--text-grey));
 
   --warning-line-angle: 45deg; /* Line angle */
-  --warning-line-color: rgb(187, 87, 87);
 
   overflow: hidden;
 }
@@ -50,14 +49,26 @@ nav {
   transform: translateY(-50%);
 }
 li{
-  padding: 1em;
+    /* Vertical Properties: */
+    --total-spacing: 1em;
+    --padded: 0.75em;
+    --required-margin: calc(var(--total-spacing) - var(--padded));
+
+    /* Horizontal Properties:*/
+    --hPadding: 1em;
+
+  padding: var(--padded) var(--hPadding);
+  margin: var(--required-margin) 0;
   list-style-type: none;
+
+  font-weight: bold;
 }
-li:nth-child(1){
-    background-color: lime;
+li:nth-child(2n){
+    background-color: #dddaca;
+    color: var(--background-greyColor);
 }
-li:nth-child(2){
-    background-color:red;
+li:nth-child(2n+1){
+    background-color: #763132;
 }
 
 #mImage {
@@ -65,11 +76,12 @@ li:nth-child(2){
   top: 50%;
   transform: translateY(-50%);
   right: 10%;
-  height: 90vh;
+  height: 60vh;
 }
 
 .stripeBox {
-  --lineWidth: 3em;
+  --warning-line-color: rgb(187, 87, 87); /* Can be overwritten inline!*/
+  --lineWidth: 3em; /* The width of the individual stripes */
 
   /* The amount of horizontal shift required for the pattern to reach a point at which it is the same as it was: */
   --lineDelta: calc(
@@ -86,6 +98,9 @@ li:nth-child(2){
   width: calc(100% + 3 * var(--lineWidth));
   height: 2em;
 
+  --starting-point: calc( var(--lineDelta) * calc( calc( var(--direction) + 1 ) / 2 ) ); /* Start at delta*((d+1)/2) : 0 for -1, -delta for 1 */
+  --ending-point: calc( var(--lineDelta) * calc( calc( var(--direction) - 1 ) / -2 ) ); /* End at delta*((d-1)/-2) : delta for -1, 0 for 1 */
+
   background-image: repeating-linear-gradient(
     var(--warning-line-angle),
     var(--warning-line-color),
@@ -99,9 +114,9 @@ li:nth-child(2){
 
 @keyframes moveStripes {
   from {
-    left: var(--lineDelta);
+    left: var(--starting-point);
   }
   to {
-    left: 0;
+    left: var(--ending-point);
   }
 }
