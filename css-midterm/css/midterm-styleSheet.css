@@ -8,7 +8,9 @@ html {
     var(--background-greyVal),
     var(--background-greyVal)
   );
-  background-color: var(--background-greyColor);
+  /* background-color: var(--background-greyColor); */
+
+  background-image: radial-gradient(var(--background-greyColor), black);
   color: rgb(var(--text-grey), var(--text-grey), var(--text-grey));
 
   --warning-line-angle: 45deg; /* Line angle */
@@ -36,7 +38,7 @@ h1 {
   position: absolute;
   transform: translateY(-50%);
   --title-padding: 1em;
-  top: calc(15%);
+  top: calc( 100% / 6);
   left: calc(10vw - var(--title-padding));
   padding: 0 var(--title-padding);
   margin: 0;
@@ -47,6 +49,11 @@ nav {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  clip-path: circle(50% at 25% 50%);
 }
 li{
     /* Vertical Properties: */
@@ -62,13 +69,15 @@ li{
   list-style-type: none;
 
   font-weight: bold;
+  width: 100%;
+  mask-origin: padding-box;
 }
 li:nth-child(2n){
-    background-color: #dddaca;
+    background-color: #dddacaa0;
     color: var(--background-greyColor);
 }
 li:nth-child(2n+1){
-    background-color: #763132;
+    background-color: #763132a0;
 }
 
 #mImage {
@@ -80,8 +89,9 @@ li:nth-child(2n+1){
 }
 
 .stripeBox {
-  --warning-line-color: rgb(187, 87, 87); /* Can be overwritten inline!*/
+  --warning-line-color: rgba(187, 87, 87, 0.9); /* Can be overwritten inline!*/
   --lineWidth: 3em; /* The width of the individual stripes */
+  --stripeRate: 5s; /* The time it takes for the stripes to move 1 length. Default is 5 seconds (Pretty slow!) */
 
   /* The amount of horizontal shift required for the pattern to reach a point at which it is the same as it was: */
   --lineDelta: calc(
@@ -109,7 +119,7 @@ li:nth-child(2n+1){
     rgba(0, 0, 0, 0) calc(var(--lineWidth) * 2)
   );
 
-  animation: moveStripes 2s linear 0s infinite forwards;
+  animation: moveStripes var(--stripeRate) linear 0s infinite forwards;
 }
 
 @keyframes moveStripes {
