@@ -2,7 +2,7 @@ html {
   font-family: Helvetica, Arial, sans-serif;
 
   --background-greyVal: 23; /* The page's background color */
-  --darkened-greyVal: calc(var(--background-greyVal) / 2);
+  --darkened-greyVal: calc(var(--background-greyVal) / 3);
   --text-grey: 200; /* The page's default text color */
   --background-greyColor: rgb(
     var(--background-greyVal),
@@ -26,13 +26,14 @@ html {
 
 
 h1 {
-  --title-grey: 230;
+  --title-grey: 220;
   color: rgb(
     var(--title-grey),
     var(--title-grey),
     var(--title-grey)
-  ); /* Cover up the moving lines */
-
+  ); 
+  
+  /* Cover up the moving lines below: */
   background-image: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0),
@@ -40,6 +41,7 @@ h1 {
     var(--background-greyColor) 90%,
     rgba(0, 0, 0, 0)
   );
+
   font-size: 3em;
 
   position: absolute;
@@ -50,6 +52,27 @@ h1 {
   padding: 0 var(--title-padding);
   margin: 0;
 }
+h1 #titleText:before{
+    /* content: "Ṁ"; */
+    content: "M";
+    text-shadow: 0 0 10px #FFFFFF40;
+    color: white;
+}
+
+#mImage {
+
+    aspect-ratio: initial;
+  
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%;
+  
+    height: 90vh;
+  
+    opacity: 0.9;
+    filter: drop-shadow(0 0 10px #FFFFFF40);
+  }
 
 
 nav {
@@ -75,7 +98,7 @@ li{
 
     /* Vertical Properties: */
     --total-spacing: 1em;
-    --padded: 0.7em;
+    --padded: 0.75em;
     --required-margin: calc(var(--total-spacing) - var(--padded));
 
     /* Horizontal Properties:*/
@@ -89,7 +112,19 @@ li{
   width: 200%;
   mask-origin: padding-box;
   text-indent: 2em;
-  transition: background-position-x 0.5s ease-in-out;
+  transition: background-position-x 0.5s ease-out; /* ease-out used to make it more "jumpy" */
+}
+li a{
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    color: inherit;
+    text-decoration: none;
+
+    padding: 0;
+    margin: 0;
+    text-indent: 0;
 }
 li:nth-child(2n){
     /* background-color: #dddacabf; */
@@ -110,24 +145,9 @@ li:nth-child(2n+1):hover{
     background-position-x: 10em;
 }
 
-#mImage {
-
-  aspect-ratio: initial;
-
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 10%;
-
-  height: 90vh;
-
-  opacity: 0.9;
-  filter: drop-shadow(0 0 10px #FFFFFF40);
-}
-
 
 .stripeBox {
-  --warning-line-color: rgba(187, 87, 87, 0.9); /* Can be overwritten inline!*/
+  --warning-line-color: rgba(187, 87, 87, 0.8); /* Can be overwritten inline!*/
   --lineWidth: 3em; /* The width of the individual stripes */
   --stripeRate: 5s; /* The time it takes for the stripes to move 1 length. Default is 5 seconds (Pretty slow!) */
 
