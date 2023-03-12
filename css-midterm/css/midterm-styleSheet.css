@@ -1,15 +1,107 @@
-html{
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 1vw;
-    --background-grey: 23;
-    background-color: rgb(var(--background-grey),var(--background-grey),var(--background-grey));
+html {
+  font-family: Helvetica, Arial, sans-serif;
+
+  --background-greyVal: 23; /* The page's background color */
+  --text-grey: 200; /* The page's default text color */
+  --background-greyColor: rgb(
+    var(--background-greyVal),
+    var(--background-greyVal),
+    var(--background-greyVal)
+  );
+  background-color: var(--background-greyColor);
+  color: rgb(var(--text-grey), var(--text-grey), var(--text-grey));
+
+  --warning-line-angle: 45deg; /* Line angle */
+  --warning-line-color: rgb(187, 87, 87);
+
+  overflow: hidden;
 }
 
 h1 {
-    --title-grey: 230;
-    color: rgb(var(--title-grey),var(--title-grey),var(--title-grey));
-    position: absolute;
-    top: 10vh;
-    left: 20vw;
-    
+  --title-grey: 230;
+  color: rgb(
+    var(--title-grey),
+    var(--title-grey),
+    var(--title-grey)
+  ); /* Cover up the moving lines */
+
+  background-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0),
+    var(--background-greyColor) 10%,
+    var(--background-greyColor) 90%,
+    rgba(0, 0, 0, 0)
+  );
+  font-size: 3em;
+
+  position: absolute;
+  transform: translateY(-50%);
+  --title-padding: 1em;
+  top: calc(15%);
+  left: calc(10vw - var(--title-padding));
+  padding: 0 var(--title-padding);
+  margin: 0;
+}
+
+nav {
+  font-size: 2em;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+li{
+  padding: 1em;
+  list-style-type: none;
+}
+li:nth-child(1){
+    background-color: lime;
+}
+li:nth-child(2){
+    background-color:red;
+}
+
+#mImage {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10%;
+  height: 90vh;
+}
+
+.stripeBox {
+  --lineWidth: 3em;
+
+  /* The amount of horizontal shift required for the pattern to reach a point at which it is the same as it was: */
+  --lineDelta: calc(
+    calc(-4 * var(--lineWidth)) / 1.414213562373095048801688724209
+  );
+  /* Divided by square root specifically for the 45 degree angle. Does not work with other angles! Set to 0 (zero) for 90 deg */
+
+  position: absolute; /* These will be placed relative to their containers */
+  transform: translateY(-50%); /* Takes centerpoint height = --vOff */
+  top: var(
+    --vOff
+  ); /* Passed inline to each element. Stands for vertical offset */
+
+  width: calc(100% + 3 * var(--lineWidth));
+  height: 2em;
+
+  background-image: repeating-linear-gradient(
+    var(--warning-line-angle),
+    var(--warning-line-color),
+    var(--warning-line-color) var(--lineWidth),
+    rgba(0, 0, 0, 0) var(--lineWidth),
+    rgba(0, 0, 0, 0) calc(var(--lineWidth) * 2)
+  );
+
+  animation: moveStripes 2s linear 0s infinite forwards;
+}
+
+@keyframes moveStripes {
+  from {
+    left: var(--lineDelta);
+  }
+  to {
+    left: 0;
+  }
 }
