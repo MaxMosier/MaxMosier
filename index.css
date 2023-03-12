@@ -1,0 +1,262 @@
+html {
+    font-family: Helvetica, Arial, sans-serif;
+  
+    --background-greyVal: 23; /* The page's background color */
+    --darkened-greyVal: calc(var(--background-greyVal) / 3);
+    --text-grey: 200; /* The page's default text color */
+    --background-greyColor: rgb(
+      var(--background-greyVal),
+      var(--background-greyVal),
+      var(--background-greyVal)
+    );
+    --background-darkened: rgb(
+      var(--darkened-greyVal),
+      var(--darkened-greyVal),
+      var(--darkened-greyVal)
+    );
+    --default-grey: rgb(var(--text-grey), var(--text-grey), var(--text-grey));
+    /* background-color: var(--background-greyColor); */
+  
+    background-image: radial-gradient(var(--background-greyColor), var(--background-darkened));
+    color: var(--default-grey);
+  
+    --warning-line-angle: 45deg; /* Line angle */
+  
+    overflow: hidden; /* Those stripe boxes are a tad wider than the page itself, which is fundamental to how they work */
+  }
+  
+  
+  h1 {
+    --title-grey: 220;
+    color: rgb(
+      var(--title-grey),
+      var(--title-grey),
+      var(--title-grey)
+    ); 
+    
+    /* Cover up the moving lines below: */
+    background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0),
+      var(--background-greyColor) 10%,
+      var(--background-greyColor) 90%,
+      rgba(0, 0, 0, 0)
+    );
+  
+    font-size: 3em;
+  
+    position: absolute;
+    transform: translateY(-50%);
+    --title-padding: 1em;
+    top: calc( 100% / 6);
+    left: calc(10vw - var(--title-padding));
+    padding: 0 var(--title-padding);
+    margin: 0;
+  }
+  h1 .titleText:before{
+      /* content: "Ṁ"; */
+      content: "M";
+      text-shadow: 0 0 10px #FFFFFF40;
+      color: white;
+  }
+  @media (orientation: portrait){
+      h1{
+          text-align: center;
+          transform: translateX(-50%) translateY(-50%);
+          left: 50%;
+          top: calc( 100vh / 6);
+      }
+  }
+  
+  #mImage {
+  
+      aspect-ratio: initial;
+      --manual-height-width-ratio: 2.60585774;
+    
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10%;
+    
+      height: 90vh;
+    
+      /* filter: drop-shadow(0 0 10px #FFFFFF40); */
+      opacity: 0.9;
+      margin: 0;
+      filter: drop-shadow(0 0 10px var(--background-greyColor)) drop-shadow(0 0 30px var(--background-greyColor)) drop-shadow(0 0 50px var(--background-greyColor));
+    }
+    /* Below are the landscape media cases: */
+    @media (max-width: 1030px) and (orientation: landscape){
+      #mImage{
+          height: 70vh;
+      }
+    }
+    @media (max-width: 800px) and (orientation: landscape){
+      #mImage{
+          height: 50vh;
+      }
+  }
+  
+  @media (orientation: portrait){
+      #mImage{
+          width: 10vw;
+          height: auto;
+  
+          transform: translateY(-50%) translateX(-50%); /* Need to get horizontal center as well now */
+          top: calc( calc( 100vh / 6) + calc( calc( var(--manual-height-width-ratio) * 10vw) / 2 ) + 5em ); /* Explaination for this is on paper */
+          left: 50%;
+      }
+  }
+  
+  nav {
+    font-size: 2em;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    left: 0;
+  
+    clip-path: circle(60% at 25% 50%);
+  }
+  
+  @media (orientation: portrait){
+      nav{
+          clip-path: none;
+          left: 50%;
+          transform: translateY(-20%);
+          position: absolute;
+          bottom: 3em;
+      }
+  }
+  
+  ul{
+      left:0;
+      padding:0;
+  }
+  
+  li{
+      /* Vertical Properties: */
+      --total-spacing: 1em;
+      --padded: 0.75em;
+      --required-margin: calc(var(--total-spacing) - var(--padded));
+  
+      /* Horizontal Properties:*/
+      --hPadding: 1em;
+  
+    padding: var(--padded) var(--hPadding);
+    margin: var(--required-margin) 0;
+    list-style-type: none;
+  
+    font-weight: bold;
+    font-kerning: none;
+    width: 200%;
+    text-indent: 2em;
+    transition: background-position-x 0.5s ease-out, text-shadow 0.25s ease-in-out, text-indent 0.75s ease-in-out; /* ease-out used to make gradient more "jumpy" */
+  }
+  /* Below are the landscape media cases: */
+  @media (max-height: 780px) and (orientation: landscape){
+      li{
+          --total-spacing: 0.75em;
+          --padded: 0.56em;
+      }
+  }
+  @media (max-height: 680px) and (orientation: landscape){
+      li{
+          --total-spacing: 0;
+          --padded: 10px;
+      }
+  }
+  @media (max-height: 510px) and (orientation: landscape){ /* Hopefully it doesn't come to this! */
+      li{
+          --padded: 0;
+      }
+  }
+  
+  @media (orientation: portrait){
+      li{
+          text-align: center;
+          transform: translateX(-50%); /* Center horizontally */
+  
+          /* left: 50%; */
+  ;    }
+  }
+  
+  li a{ 
+      /* Make it so you can click on the whole block (Or at least, what's what I was trying to do... */
+      display: block;
+      /* For some reason I can't determine, t */
+      height: 100%;
+      width: 100%;
+  
+      color: inherit;
+      text-decoration: none;
+  
+      padding: 0;
+      margin: 0;
+      text-indent: 0;
+  }
+  li:nth-child(2n){
+      /* background-color: #dddacabf; */
+      color: var(--background-greyColor);
+      /*Size doubled and gradient ended with solid color to allow for translation animation to fill in needed space with solid color */
+      background-image: linear-gradient(90deg, #dddaca 10%, #dddaca00 30%, #dddaca00 70%, #dddaca 70% );
+      
+  }
+  li:nth-child(2n+1){
+      /* background-color: #763132bf; */
+      background-image: linear-gradient(90deg, #763132 10%, #76313200 30%, #76313200 70%, #763132 70%);
+  }
+  /* Hover properties for nav menu: */
+  li:nth-child(2n):hover{
+      text-shadow: 0 0 1em rgba(var(--background-greyVal),var(--background-greyVal),var(--background-greyVal),0.6);
+      background-position-x: 10em;
+  }
+  li:nth-child(2n+1):hover{
+      text-shadow: 0 0 1em rgb(var(--text-grey), var(--text-grey), var(--text-grey), 0.4);
+      background-position-x: 10em;
+  }
+  
+  .stripeBox {
+    --warning-line-color: rgba(187, 87, 87, 0.8); /* Can be overwritten inline!*/
+    --lineWidth: 3em; /* The width of the individual stripes */
+    --stripeRate: 5s; /* The time it takes for the stripes to move 1 length. Default is 5 seconds (Pretty slow!) */
+  
+    /* The amount of horizontal shift required for the pattern to reach a point at which it is the same as it was: */
+    --lineDelta: calc(
+      calc(-4 * var(--lineWidth)) / 1.414213562373095048801688724209
+    );
+    /* Divided by square root specifically for the 45 degree angle. Does not work with other angles! Set to 0 (zero) for 90 deg */
+  
+    position: absolute; /* These will be placed relative to their containers */
+    transform: translateY(-50%); /* Takes centerpoint height = --vOff */
+    top: var(
+      --vOff
+    ); /* Passed inline to each element. Stands for vertical offset */
+  
+    width: calc(100% + 3 * var(--lineWidth));
+    height: 2em;
+  
+    --starting-point: calc( var(--lineDelta) * calc( calc( var(--direction) + 1 ) / 2 ) ); /* Start at delta*((d+1)/2) : 0 for -1, -delta for 1 */
+    --ending-point: calc( var(--lineDelta) * calc( calc( var(--direction) - 1 ) / -2 ) ); /* End at delta*((d-1)/-2) : delta for -1, 0 for 1 */
+  
+    background-image: repeating-linear-gradient(
+      var(--warning-line-angle),
+      var(--warning-line-color),
+      var(--warning-line-color) var(--lineWidth),
+      rgba(0, 0, 0, 0) var(--lineWidth),
+      rgba(0, 0, 0, 0) calc(var(--lineWidth) * 2)
+    );
+  
+    animation: moveStripes var(--stripeRate) linear 0s infinite forwards;
+  }
+  @keyframes moveStripes {
+    from {
+      left: var(--starting-point);
+    }
+    to {
+      left: var(--ending-point);
+    }
+  }
+  
