@@ -2,21 +2,28 @@ html {
   font-family: Helvetica, Arial, sans-serif;
 
   --background-greyVal: 23; /* The page's background color */
+  --darkened-greyVal: calc(var(--background-greyVal) / 2);
   --text-grey: 200; /* The page's default text color */
   --background-greyColor: rgb(
     var(--background-greyVal),
     var(--background-greyVal),
     var(--background-greyVal)
   );
+  --background-darkened: rgb(
+    var(--darkened-greyVal),
+    var(--darkened-greyVal),
+    var(--darkened-greyVal)
+  );
   /* background-color: var(--background-greyColor); */
 
-  background-image: radial-gradient(var(--background-greyColor), black);
+  background-image: radial-gradient(var(--background-greyColor), var(--background-darkened));
   color: rgb(var(--text-grey), var(--text-grey), var(--text-grey));
 
   --warning-line-angle: 45deg; /* Line angle */
 
-  overflow: hidden;
+  overflow: hidden; /* Those stripe boxes are a tad wider than the page itself, which is fundamental to how they work */
 }
+
 
 h1 {
   --title-grey: 230;
@@ -44,6 +51,7 @@ h1 {
   margin: 0;
 }
 
+
 nav {
   font-size: 2em;
   position: fixed;
@@ -52,13 +60,22 @@ nav {
   width: 100%;
   padding: 0;
   margin: 0;
+  left: 0;
 
-  clip-path: circle(50% at 25% 50%);
+  clip-path: circle(60% at 25% 50%);
 }
+
+ul{
+    left:0;
+    padding:0;
+}
+
 li{
+    --othersOffset: 0em;
+
     /* Vertical Properties: */
     --total-spacing: 1em;
-    --padded: 0.75em;
+    --padded: 0.7em;
     --required-margin: calc(var(--total-spacing) - var(--padded));
 
     /* Horizontal Properties:*/
@@ -69,24 +86,45 @@ li{
   list-style-type: none;
 
   font-weight: bold;
-  width: 100%;
+  width: 200%;
   mask-origin: padding-box;
+  text-indent: 2em;
+  transition: background-position-x 0.5s ease-in-out;
 }
 li:nth-child(2n){
-    background-color: #dddacaa0;
+    /* background-color: #dddacabf; */
     color: var(--background-greyColor);
+    /*Size doubled and gradient ended with solid color to allow for translation animation to fill in needed space with solid color */
+    background-image: linear-gradient(90deg, #dddaca 10%, #dddaca00 30%, #dddaca00 70%, #dddaca 70% );
+    
 }
 li:nth-child(2n+1){
-    background-color: #763132a0;
+    /* background-color: #763132bf; */
+    background-image: linear-gradient(90deg, #763132 10%, #76313200 30%, #76313200 70%, #763132 70%);
+}
+/* Hover properties for nav menu: */
+li:nth-child(2n):hover{
+    background-position-x: 10em;
+}
+li:nth-child(2n+1):hover{
+    background-position-x: 10em;
 }
 
 #mImage {
+
+  aspect-ratio: initial;
+
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 10%;
-  height: 60vh;
+
+  height: 90vh;
+
+  opacity: 0.9;
+  filter: drop-shadow(0 0 10px #FFFFFF40);
 }
+
 
 .stripeBox {
   --warning-line-color: rgba(187, 87, 87, 0.9); /* Can be overwritten inline!*/
@@ -121,7 +159,6 @@ li:nth-child(2n+1){
 
   animation: moveStripes var(--stripeRate) linear 0s infinite forwards;
 }
-
 @keyframes moveStripes {
   from {
     left: var(--starting-point);

@@ -10,36 +10,41 @@
 <body>
     <!--Wow. I've made a lot of inline stuff, which I know we've been told not to do, but I wanted maximum customizability, and didn't want to make a ton of classes/id's-->
     <!--Outer two: -->
-    <div class="stripeBox" style="--vOff: calc( 100% / 6); --direction: 1; --stripeRate: 2.5s"></div>
-    <div class="stripeBox" style="--vOff: calc( 500% / 6); --direction: -1; --stripeRate: 2.5s"></div>
+    <div class="stripeBox" style="--vOff: calc( 100% / 6); --direction: 1;"></div>
+    <div class="stripeBox" style="--vOff: calc( 500% / 6); --direction: -1;"></div>
 
     <!--Inner two:-->
-    <div class="stripeBox" style="--vOff: calc( 200% / 6); --direction: -1; --warning-line-color: rgba(187, 87, 87, 0.25);"></div>
-    <div class="stripeBox" style="--vOff: calc( 400% / 6); --direction: -1; --warning-line-color: rgba(187, 87, 87, 0.25);"></div>
+    <div class="stripeBox" style="--vOff: calc( 200% / 6); --direction: -1; --warning-line-color: rgba(187, 87, 87, 0.25); --stripeRate: 10s;"></div>
+    <div class="stripeBox" style="--vOff: calc( 400% / 6); --direction: -1; --warning-line-color: rgba(187, 87, 87, 0.25); --stripeRate: 10s;"></div>
 
     <!--Innermost:-->
-    <div class="stripeBox" style="--vOff: calc( 300% / 6); --direction: 1; --warning-line-color: rgba(187, 87, 87, 0.0875); --stripeRate: 10s"></div>
+    <div class="stripeBox" style="--vOff: calc( 300% / 6); --direction: 1; --warning-line-color: rgba(187, 87, 87, 0.0875); --stripeRate: 15s"></div>
 
     <h1>MAXIMILLIAN MOSIER</h1>
-    <img id="mImage" src="css-midterm/img/MBWI.png" alt="A stylized image of the letter M with a diamond shape above it">
     <nav>
         <ul>
             <li>
-                Nihil
+                <div id="shadow"></div>
+                OPTION A
             </li>
             <li>
-                About
+                <div id="shadow"></div>
+                OPTION B
             </li>
             <li>
-                Home
+                <div id="shadow"></div>
+                OPTION C
             </li>
             <li>
-                Links
+                <div id="shadow"></div>
+                OPTION D
             </li>
             <li>
-                Media
+                <div id="shadow"></div>
+                OPTION E
             </li>
         </ul>
     </nav>
+    <img id="mImage" src="css-midterm/img/MBWI.png" alt="A stylized image of the letter M with a diamond shape above it">
 </body>
 </html>
