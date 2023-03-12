@@ -59,10 +59,19 @@ h1 .titleText:before{
     text-shadow: 0 0 10px #FFFFFF40;
     color: white;
 }
+@media (orientation: portrait){
+    h1{
+        text-align: center;
+        transform: translateX(-50%) translateY(-50%);
+        left: 50%;
+        top: calc( 100vh / 6);
+    }
+}
 
 #mImage {
 
     aspect-ratio: initial;
+    --manual-height-width-ratio: 2.60585774;
   
     position: absolute;
     top: 50%;
@@ -73,8 +82,10 @@ h1 .titleText:before{
   
     /* filter: drop-shadow(0 0 10px #FFFFFF40); */
     opacity: 0.9;
+    margin: 0;
     filter: drop-shadow(0 0 10px var(--background-greyColor)) drop-shadow(0 0 30px var(--background-greyColor)) drop-shadow(0 0 50px var(--background-greyColor));
   }
+  /* Below are the landscape media cases: */
   @media (max-width: 1030px) and (orientation: landscape){
     #mImage{
         height: 70vh;
@@ -83,6 +94,17 @@ h1 .titleText:before{
   @media (max-width: 800px) and (orientation: landscape){
     #mImage{
         height: 50vh;
+    }
+}
+
+@media (orientation: portrait){
+    #mImage{
+        width: 10vw;
+        height: auto;
+
+        transform: translateY(-50%) translateX(-50%); /* Need to get horizontal center as well now */
+        top: calc( calc( 100vh / 6) + calc( calc( var(--manual-height-width-ratio) * 10vw) / 2 ) + 5em ); /* Explaination for this is on paper */
+        left: 50%;
     }
 }
 
@@ -97,6 +119,16 @@ nav {
   left: 0;
 
   clip-path: circle(60% at 25% 50%);
+}
+
+@media (orientation: portrait){
+    nav{
+        clip-path: none;
+        left: 50%;
+        transform: translateY(-20%);
+        position: absolute;
+        bottom: 3em;
+    }
 }
 
 ul{
@@ -123,6 +155,7 @@ li{
   text-indent: 2em;
   transition: background-position-x 0.5s ease-out, text-shadow 0.25s ease-in-out, text-indent 0.75s ease-in-out; /* ease-out used to make gradient more "jumpy" */
 }
+/* Below are the landscape media cases: */
 @media (max-height: 780px) and (orientation: landscape){
     li{
         --total-spacing: 0.75em;
@@ -132,8 +165,22 @@ li{
 @media (max-height: 680px) and (orientation: landscape){
     li{
         --total-spacing: 0;
+        --padded: 10px;
+    }
+}
+@media (max-height: 510px) and (orientation: landscape){ /* Hopefully it doesn't come to this! */
+    li{
         --padded: 0;
     }
+}
+
+@media (orientation: portrait){
+    li{
+        text-align: center;
+        transform: translateX(-50%); /* Center horizontally */
+
+        /* left: 50%; */
+;    }
 }
 
 li a{ 
