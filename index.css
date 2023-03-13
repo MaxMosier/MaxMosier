@@ -2,7 +2,7 @@ html {
     font-family: Helvetica, Arial, sans-serif;
   
     --background-greyVal: 23; /* The page's background color */
-    --darkened-greyVal: calc(var(--background-greyVal) / 3);
+    --darkened-greyVal: calc(var(--background-greyVal) / 4);
     --text-grey: 200; /* The page's default text color */
     --background-greyColor: rgb(
       var(--background-greyVal),
@@ -23,6 +23,7 @@ html {
     --warning-line-angle: 45deg; /* Line angle */
   
     overflow: hidden; /* Those stripe boxes are a tad wider than the page itself, which is fundamental to how they work */
+    /* height: 100vh; */
   }
   
   
@@ -87,12 +88,12 @@ html {
       filter: drop-shadow(0 0 10px var(--background-greyColor)) drop-shadow(0 0 30px var(--background-greyColor)) drop-shadow(0 0 50px var(--background-greyColor));
     }
     /* Below are the landscape media cases: */
-    @media (max-width: 1030px) and (orientation: landscape){
+    @media (max-width: 65em) and (orientation: landscape){
       #mImage{
           height: 70vh;
       }
     }
-    @media (max-width: 800px) and (orientation: landscape){
+    @media (max-width: 50em) and (orientation: landscape){
       #mImage{
           height: 50vh;
       }
@@ -164,19 +165,19 @@ html {
     background-color: #00000000;
   }
   /* Below are the landscape media cases: */
-  @media (max-height: 780px) and (orientation: landscape){
+  @media (max-height: 49em) and (orientation: landscape){
       li{
           --total-spacing: 0.75em;
           --padded: 0.56em;
       }
   }
-  @media (max-height: 680px) and (orientation: landscape){
+  @media (max-height: 43em) and (orientation: landscape){
       li{
           --total-spacing: 0;
           --padded: 10px;
       }
   }
-  @media (max-height: 510px) and (orientation: landscape){ /* Hopefully it doesn't come to this! */
+  @media (max-height: 32em) and (orientation: landscape){ /* Hopefully it doesn't come to this! */
       li{
           --padded: 0;
       }
@@ -191,12 +192,13 @@ html {
         }
   }
 
-  @media (max-height: 890px) and (orientation: portrait){
+  @media (max-height: 55em) and (orientation: portrait){
     li{
+        --total-spacing: 0.8em;
         --padded: 2vh; 
     }
   }
-  @media (max-height: 890px) and (orientation: portrait){
+  @media (max-height: 44em) and (orientation: portrait){
     li{
         --total-spacing: 0;
         --padded: 10px;
