@@ -10,6 +10,10 @@ html {
     var(--imageW-portrait) * calc(1 / var(--selfImageRatio)));
 }
 
+p {
+    text-indent: 1.5em;
+}
+
 #selfImage {
   position: absolute;
   height: var(--imageH-landscape);
@@ -20,6 +24,11 @@ html {
   transition: none;
 
   border: 10px solid rgba(187, 87, 87, 0.8);
+}
+@media (max-width: calc(1 * calc(var(--imageW-landscape) + var(--allPadding)))){
+    #selfImage{
+        height: calc(0.08 * var(--imageH-landscape));
+    }
 }
 
 #aboutMeBox {
@@ -38,8 +47,9 @@ html {
   color: #DCDCDC;
 }
 
+/* Below is used to adjust font size without messing up the box's proportions, which were designed at 2/3rds the size */
 #aboutMeText{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 /* Scrollbar stuff: */
@@ -56,9 +66,9 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: #171717;
-  box-shadow: 0 0 0.8em 0.3em #171717a0 ;
+  box-shadow: 0 0 0.8em 0.1em #171717a0 ;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #eeeeee;
-  box-shadow: 0 0 0.5em 0.8em #aaaaaaf0
+  box-shadow: 0 0 0.5em 0.1em #aaaaaaf0
 }
