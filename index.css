@@ -68,6 +68,8 @@ html {
       }
   }
   
+
+
   #mImage {
   
       aspect-ratio: initial;
@@ -97,9 +99,10 @@ html {
       }
   }
   
+  /* Portrait orientation reactivity: */
   @media (orientation: portrait){
       #mImage{
-          width: 10vw;
+          width: 10vh;
           height: auto;
   
           transform: translateY(-50%) translateX(-50%); /* Need to get horizontal center as well now */
@@ -107,6 +110,20 @@ html {
           left: 50%;
       }
   }
+  /* Cases for when the M overflows into the nav bar:  */
+  @media (min-width: 700px) and (orientation: portrait){
+    #mImage{
+        width: 4em;
+        top: calc( calc( 100vh / 6) + calc( calc( var(--manual-height-width-ratio) * 10vw) / 2 ) + 4em );
+    }
+  }
+  @media (min-width: 800px) and (orientation: portrait){
+    #mImage{
+        width: 7.5vw;
+        top: calc( calc( 100vh / 6) + calc( calc( var(--manual-height-width-ratio) * 10vw) / 2 ) + 3em );
+    }
+  }
+  /* Cases for when the M is too small as a result of its dependence on width: */
   
   nav {
     font-size: 2em;
@@ -153,7 +170,10 @@ html {
     font-kerning: none;
     width: 200%;
     text-indent: 2em;
-    transition: background-position-x 0.5s ease-out, text-shadow 0.25s ease-in-out, text-indent 0.75s ease-in-out; /* ease-out used to make gradient more "jumpy" */
+    transition: background-position-x 0.5s ease-out, text-shadow 0.25s ease-in-out, text-indent 0.75s ease-in-out,
+                background-color 0.5s ease-out; /* ease-out used to make gradient more "jumpy" */
+
+    background-color: #00000000;
   }
   /* Below are the landscape media cases: */
   @media (max-height: 780px) and (orientation: landscape){
@@ -178,9 +198,9 @@ html {
       li{
           text-align: center;
           transform: translateX(-50%); /* Center horizontally */
-  
-          /* left: 50%; */
-  ;    }
+          /* background-position-x: -100vw; */
+          /* left: 50%; */    
+        }
   }
   
   li a{ 
@@ -197,6 +217,7 @@ html {
       margin: 0;
       text-indent: 0;
   }
+
   li:nth-child(2n){
       /* background-color: #dddacabf; */
       color: var(--background-greyColor);
@@ -204,18 +225,45 @@ html {
       background-image: linear-gradient(90deg, #dddaca 10%, #dddaca00 30%, #dddaca00 70%, #dddaca 70% );
       
   }
+  @media (orientation: portrait){
+    li:nth-child(2n){
+        width: 100vw;
+        background-image: linear-gradient(90deg, #dddaca00 0%, #dddaca 30%, #dddaca 70%, #dddaca00 100% );
+    }
+  }
+
   li:nth-child(2n+1){
       /* background-color: #763132bf; */
       background-image: linear-gradient(90deg, #763132 10%, #76313200 30%, #76313200 70%, #763132 70%);
   }
+  @media (orientation: portrait){
+    li:nth-child(2n+1){
+        width: 100vw;
+        background-image: linear-gradient(90deg, #76313200 0%, #763132 30%, #763132 70%, #76313200 100%);
+    }
+  }
+
   /* Hover properties for nav menu: */
   li:nth-child(2n):hover{
       text-shadow: 0 0 1em rgba(var(--background-greyVal),var(--background-greyVal),var(--background-greyVal),0.6);
       background-position-x: 10em;
   }
+  @media (orientation: portrait){
+    li:nth-child(2n):hover{
+        background-position: 0;
+        background-color: #dddaca;
+    }
+  }
+
   li:nth-child(2n+1):hover{
       text-shadow: 0 0 1em rgb(var(--text-grey), var(--text-grey), var(--text-grey), 0.4);
       background-position-x: 10em;
+  }
+  @media (orientation: portrait){
+    li:nth-child(2n+1):hover{
+        background-position: 0;
+        background-color: #763132;
+    }
   }
   
   .stripeBox {
