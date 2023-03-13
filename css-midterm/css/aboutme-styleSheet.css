@@ -1,0 +1,37 @@
+html{
+    --selfImageRatio: 1.5012987px; /* h/w */
+    --allPadding: 10vw;
+
+    --imageH-landscape: 80vh;
+    --imageW-landscape: calc( var(--imageH-landscape) * var(--selfImageRatio) );
+
+    --imageW-portrait: 90vw;
+    --imageH-portrait: calc( var(--imageW-portrait) * calc(1 / var(--selfImageRatio)) );
+}
+
+#selfImage{
+
+    position: fixed;
+    height: var(--imageH-landscape);
+    width: auto;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+
+    border: 10px solid rgba(187, 87, 87, 0.8);
+}
+
+#aboutMeBox{
+    position: fixed;
+    top: 50%;
+    left: var(--allPadding);
+    transform: translateY(-50%);
+    width: 30vw;
+    /* width: calc(100vw - var(--imageW-landscape) - calc(4 * var(--allPadding))); */
+}
+
+#imageBorderWrapper{
+    width: 1000px;
+    height: 2000px;
+    background-color:white;
+}
