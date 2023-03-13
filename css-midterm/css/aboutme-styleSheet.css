@@ -1,37 +1,60 @@
-html{
-    --selfImageRatio: 1.5012987px; /* h/w */
-    --allPadding: 10vw;
+html {
+  --selfImageRatio: 1.5012987vh; /* h/w */
+  --allPadding: 0vw;
 
-    --imageH-landscape: 80vh;
-    --imageW-landscape: calc( var(--imageH-landscape) * var(--selfImageRatio) );
+  --imageH-landscape: 80vh;
+  --imageW-landscape: calc(var(--imageH-landscape) * var(--selfImageRatio));
 
-    --imageW-portrait: 90vw;
-    --imageH-portrait: calc( var(--imageW-portrait) * calc(1 / var(--selfImageRatio)) );
+  --imageW-portrait: 90vw;
+  --imageH-portrait: calc(
+    var(--imageW-portrait) * calc(1 / var(--selfImageRatio)));
 }
 
-#selfImage{
+#selfImage {
+  position: fixed;
+  height: var(--imageH-landscape);
+  width: auto;
+  top: 50%;
+  right: var(--allPadding);
+  transform: translateY(-50%);
 
-    position: fixed;
-    height: var(--imageH-landscape);
-    width: auto;
-    top: 50%;
-    right: 10%;
-    transform: translateY(-50%);
-
-    border: 10px solid rgba(187, 87, 87, 0.8);
+  border: 10px solid rgba(187, 87, 87, 0.8);
 }
 
-#aboutMeBox{
-    position: fixed;
-    top: 50%;
-    left: var(--allPadding);
-    transform: translateY(-50%);
-    width: 30vw;
-    /* width: calc(100vw - var(--imageW-landscape) - calc(4 * var(--allPadding))); */
+#aboutMeBox {
+  position: fixed;
+  top: 50%;
+  left: var(--allPadding);
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 1em;
+  /* width: 30vw; */
+  height: 20em;
+  width: 10vw;
+  /* width: calc(20vw - calc(3 * var(--allPadding))); */
+  /* width: calc(100vw - var(--imageW-landscape) - calc(4 * var(--allPadding))); */
+
+  overflow: scroll;
+  background-color: rgba(187, 87, 87, 0.5);
 }
 
-#imageBorderWrapper{
-    width: 1000px;
-    height: 2000px;
-    background-color:white;
+/* Scrollbar stuff: */
+
+::-webkit-scrollbar {
+  width: 0.7em;
+  height: 0.7em;
+  background-color: #171717;
+}
+
+::-webkit-scrollbar-track {
+  background: #bb5050a0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #171717;
+  box-shadow: 0 0 0.8em 0.3em #171717a0 ;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #eeeeee;
+  box-shadow: 0 0 0.5em 0.8em #aaaaaaf0
 }
