@@ -1,9 +1,9 @@
 html {
-  --selfImageRatio: 1.5012987vh; /* h/w */
-  --allPadding: 0vw;
+  --selfImageRatio: 1.5012987; /* h/w */
+  --allPadding: 5vw;
 
   --imageH-landscape: 80vh;
-  --imageW-landscape: calc(var(--imageH-landscape) * var(--selfImageRatio));
+  --imageW-landscape: calc(var(--imageH-landscape) / var(--selfImageRatio));
 
   --imageW-portrait: 90vw;
   --imageH-portrait: calc(
@@ -11,31 +11,35 @@ html {
 }
 
 #selfImage {
-  position: fixed;
+  position: absolute;
   height: var(--imageH-landscape);
   width: auto;
   top: 50%;
   right: var(--allPadding);
   transform: translateY(-50%);
+  transition: none;
 
   border: 10px solid rgba(187, 87, 87, 0.8);
 }
 
 #aboutMeBox {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: var(--allPadding);
   transform: translateY(-50%);
   margin: 0;
   padding: 1em;
-  /* width: 30vw; */
   height: 20em;
-  width: 10vw;
-  /* width: calc(20vw - calc(3 * var(--allPadding))); */
-  /* width: calc(100vw - var(--imageW-landscape) - calc(4 * var(--allPadding))); */
+  width: calc(100vw - 2em - var(--imageW-landscape) - calc(4 * var(--allPadding)));
 
   overflow: scroll;
   background-color: rgba(187, 87, 87, 0.5);
+
+  color: #DCDCDC;
+}
+
+#aboutMeText{
+    font-size: 2em;
 }
 
 /* Scrollbar stuff: */
