@@ -71,7 +71,6 @@ html {
 
 
   #mImage {
-  
       aspect-ratio: initial;
       --manual-height-width-ratio: 2.60585774;
     
@@ -102,28 +101,15 @@ html {
   /* Portrait orientation reactivity: */
   @media (orientation: portrait){
       #mImage{
-          width: 10vh;
-          height: auto;
+        position: relative;
+          height: 20vh;
+          width: auto;
   
           transform: translateY(-50%) translateX(-50%); /* Need to get horizontal center as well now */
-          top: calc( calc( 100vh / 6) + calc( calc( var(--manual-height-width-ratio) * 10vw) / 2 ) + 5em ); /* Explaination for this is on paper */
+          top: calc(30vh + 1.5em);
           left: 50%;
       }
   }
-  /* Cases for when the M overflows into the nav bar:  */
-  @media (min-width: 700px) and (orientation: portrait){
-    #mImage{
-        width: 4em;
-        top: calc( calc( 100vh / 6) + calc( calc( var(--manual-height-width-ratio) * 10vw) / 2 ) + 4em );
-    }
-  }
-  @media (min-width: 800px) and (orientation: portrait){
-    #mImage{
-        width: 7.5vw;
-        top: calc( calc( 100vh / 6) + calc( calc( var(--manual-height-width-ratio) * 10vw) / 2 ) + 3em );
-    }
-  }
-  /* Cases for when the M is too small as a result of its dependence on width: */
   
   nav {
     font-size: 2em;
@@ -140,10 +126,12 @@ html {
   
   @media (orientation: portrait){
       nav{
+          position: fixed;
           clip-path: none;
           left: 50%;
-          transform: translateY(-20%);
+          transform: translateY(-2em);
           position: absolute;
+          /* bottom: 3em; */
           bottom: 3em;
       }
   }
@@ -201,6 +189,18 @@ html {
           /* background-position-x: -100vw; */
           /* left: 50%; */    
         }
+  }
+
+  @media (max-height: 890px) and (orientation: portrait){
+    li{
+        --padded: 2vh; 
+    }
+  }
+  @media (max-height: 890px) and (orientation: portrait){
+    li{
+        --total-spacing: 0;
+        --padded: 10px;
+    }
   }
   
   li a{ 
