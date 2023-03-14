@@ -1,0 +1,9 @@
+html{
+    background-color: #707070;
+}
+#button-a{
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #62bfae;
+    border-radius: 1em;
+    border: solid #e99
+}
