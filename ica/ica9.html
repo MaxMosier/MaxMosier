@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/ica9.css" />
     <title>Document</title>
-</head>
-<body>
-    <div id="button-a">TEST TEXT</div>
-</body>
+    <!-- <script src="../js/ica9.js"></script> -->
+  </head>
+  <body>
+    <div id="button-container">
+      <h1>Click the following items:</h1>
+      <div class="button" id="color-button">COLOR CHANGE</div>
+      <div class="button" id="inverter-button">INTERVER</div>
+    </div>
+    <script>
+      const colorButton = document.querySelector("#color-button");
+      const invertButton = document.querySelector("#inverter-button");
+
+      const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+      let colorIndex = 0;
+
+      let inverterState = false;
+
+      function gotoNextColor() {
+        colorButton.style.backgroundColor = colors[colorIndex];
+        if(colors[colorIndex]=="yellow"){
+            colorButton.style.color = "#191919"; // Could have gone to greater lengths to determine brightness val of color, but didn't want to
+        } else {
+            colorButton.style.color = "";
+        }
+        colorButton.style.borderWidth = 3 * colorIndex + "px"; //Peaks in the middle
+        colorButton.style.borderColor =
+          colors[(colorIndex + 3) % colors.length];
+        colorIndex = (colorIndex + 1) % colors.length; //Loops through the colors.
+      }
+
+      function invert() {
+        inverterState = !inverterState;
+        if (inverterState) {
+          invertButton.style.backgroundColor = "#a0a0a0";
+          invertButton.style.color = "white";
+          invertButton.style.borderRadius = "50%"; //Makes it elliptical
+          invertButton.style.transform = "rotate(360deg)";
+        } else {
+          invertButton.style.backgroundColor = "";
+          invertButton.style.color = "";
+          invertButton.style.borderRadius = "";
+          invertButton.style.transform = "";
+        }
+      }
+
+      colorButton.addEventListener("click", gotoNextColor);
+      invertButton.addEventListener("click", invert);
+    </script>
+  </body>
 </html>
