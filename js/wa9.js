@@ -47,8 +47,8 @@ function result() {
 
   //Convert units if needed:
   if (document.getElementById("uk").checked) {
-    weightString = `${Math.round(characterWeight/14)} stone`;
-    tempString = `${Math.round(5*(temp-32)/9)} centigrade`;
+    weightString = `${Math.round(characterWeight / 14)} stone`;
+    tempString = `${Math.round((5 * (temp - 32)) / 9)} centigrade`;
   } else {
     weightString = `${characterWeight}`;
     tempString = `${temp} fahrenheight`;
