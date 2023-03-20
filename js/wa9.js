@@ -20,10 +20,10 @@ const possibleObjects = [
   "beautiful crystal deposit",
   "great beast"];
 
-  
+
 // Default story template:
 const storyLayout =
-  "The fog was thick in the pine forest, making it hard to see beyond a few feet. :insertName: shivered in the :insertTemp: degree weather, regretting not bringing a warmer coat. :userName: had insisted on coming here, to the eerie :insertPlace: where they had heard rumors of a :insertObject:. As they stumbled through the mist, they heard a rustling in the bushes. :insertName: tried to call out, but their voice was stuck in their throat. Suddenly, :userName: grabbed their arm and whispered urgently, \"We need to :insertVerb: now!\"";
+  "The fog was thick in the :insertSize: pine forest, making it hard to see beyond a few feet. :insertName: shivered in the :insertTemp: degree weather, regretting not bringing a warmer coat. :userName: had insisted on coming here, to the eerie :insertPlace: where they had heard rumors of a :insertObject:. As they stumbled through the mist, they heard a rustling in the bushes. :insertName: tried to call out, but their voice was stuck in their throat. Suddenly, :userName: grabbed their arm and whispered urgently, \"We need to :insertVerb: now!\"";
 // ^^ The name ":userName:" is what I've used in place of "Bob" left intact as default value
 
 const customName = document.getElementById("customname");
@@ -40,8 +40,8 @@ randomize.addEventListener("click", result);
 
 // Function which generates a random story:
 function result() {
-  //Numerical values in story. Default lbs and Fahrenheit:
-  const characterWeight = 300;
+  //Numerical values in story. Default square miles and Fahrenheit:
+  const forestSize = 419;
   const temp = 2;
 
   //First set the alterable string to the template string:
@@ -63,14 +63,14 @@ function result() {
 
   //Convert units if needed:
   if (document.getElementById("uk").checked) {
-    weightString = `${Math.round(characterWeight / 14)} stone`;
+    weightString = `${Math.round(forestSize * 2.58999)} km<sup>2</sup>`;
     tempString = `${Math.round((5 * (temp - 32)) / 9)} centigrade`;
   } else {
-    weightString = `${characterWeight}`;
+    weightString = `${forestSize} mi<sup>2</sup>`;
     tempString = `${temp} fahrenheight`;
   }
 
-  generated = generated.replaceAll(":insertWeight:", weightString);
+  generated = generated.replaceAll(":insertSize:", weightString);
   generated = generated.replaceAll(":insertTemp:", tempString);
 
   //Finally, add randomized components:
@@ -92,7 +92,7 @@ function result() {
     randomValueFromArray(possibleObjects)
   );
 
-  //Set content to newly generated story and reveal:
-  story.textContent = generated;
+  //Set content to newly generated story and reveal. Changed to innerHTML, since I've got a superscript!:
+  story.innerHTML = generated;
   story.style.visibility = "visible";
 }
