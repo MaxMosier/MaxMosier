@@ -1,16 +1,30 @@
 // Defenition of necessary string arrays. This is the only part not initially given:
-const possibleNames = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
-const possiblePlaces = ["the soup kitchen", "Disneyland", "the White House"];
-const possibleVerbs = [
-  "spontaneously combusted",
-  "melted into a puddle on the sidewalk",
-  "turned into a slug and crawled away",
-];
 
+//These were the only interesting names I could think of...
+const possibleNames = [
+  "Aria Nightingale", 
+  "Calliope Song", 
+  "Rowan Hawthorne"];
+const possiblePlaces = [
+  "gorge", 
+  "cemetery", 
+  "cave"];
+const possibleVerbs = [
+  "leave right",
+  "hide over there",
+  "get out of here",
+];
+//Also added this one:
+const possibleObjects = [
+  "hidden treasure",
+  "beautiful crystal deposit",
+  "great beast"];
+
+  
 // Default story template:
 const storyLayout =
-  "It was :insertTemp: outside, so :insertName: went for a walk. When they got to :insertPlace:, they stared in horror for a few moments, then :insertVerb:. Bob saw the whole thing, but was not surprised — :insertName: weighs :insertWeight:, and it was a hot day.";
-// ^^ Bob left intact as default value
+  "The fog was thick in the pine forest, making it hard to see beyond a few feet. :insertName: shivered in the :insertTemp: degree weather, regretting not bringing a warmer coat. :userName: had insisted on coming here, to the eerie :insertPlace: where they had heard rumors of a :insertObject:. As they stumbled through the mist, they heard a rustling in the bushes. :insertName: tried to call out, but their voice was stuck in their throat. Suddenly, :userName: grabbed their arm and whispered urgently, \"We need to :insertVerb: now!\"";
+// ^^ The name ":userName:" is what I've used in place of "Bob" left intact as default value
 
 const customName = document.getElementById("customname");
 const randomize = document.querySelector(".randomize");
@@ -28,7 +42,7 @@ randomize.addEventListener("click", result);
 function result() {
   //Numerical values in story. Default lbs and Fahrenheit:
   const characterWeight = 300;
-  const temp = 94;
+  const temp = 2;
 
   //First set the alterable string to the template string:
   let generated = storyLayout;
@@ -36,7 +50,9 @@ function result() {
   // Replace the name if one is given:
   if (customName.value !== "") {
     const newName = customName.value;
-    generated = generated.replaceAll("Bob", newName);
+    generated = generated.replaceAll(":userName:", newName);
+  } else {
+    generated = generated.replaceAll(":userName:", "Wilson");
   }
 
   //Replace necessary numerical values:
@@ -70,6 +86,10 @@ function result() {
   generated = generated.replaceAll(
     ":insertVerb:",
     randomValueFromArray(possibleVerbs)
+  );
+  generated = generated.replaceAll(
+    ":insertObject:",
+    randomValueFromArray(possibleObjects)
   );
 
   //Set content to newly generated story and reveal:
