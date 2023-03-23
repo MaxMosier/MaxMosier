@@ -18,7 +18,7 @@
 - [ICA7](https://maxmosier.github.io/MaxMosier/ica/ica7.html)
 - ICA8 : ∄
 - [ICA9](https://maxmosier.github.io/MaxMosier/ica/ica9.html)
-- ICA10
+- [ICA10](https://maxmosier.github.io/MaxMosier/ica/ica10.html)
 - ICA11
 - ICA12
 - ICA13
