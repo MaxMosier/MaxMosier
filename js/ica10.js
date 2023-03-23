@@ -15,20 +15,19 @@ function displayMessage(inpuText, messageType) {
 
   closeBtn.addEventListener("click", () => panel.parentNode.removeChild(panel));
 
-  if (msgType === "warning") {
+  if (messageType === "warning") {
     msg.style.backgroundImage = "url(../img/warning.png)";
     panel.style.backgroundColor = "red";
-  } else if (msgType === "chat") {
+  } else if (messageType === "chat") {
     msg.style.backgroundImage = "url(../img/chat.png)";
     panel.style.backgroundColor = "aqua";
   } else {
     msg.style.paddingLeft = "20px";
   }
 }
-
-displayMessage();
+// displayMessage("Hi there","");
+displayMessage("Your inbox is almost full — delete some mails", "chat");
 
 const button = document.querySelector("button");
-btn.addEventListener("click", () =>
-  displayMessage("Woo this is a different message!"," erfqwef")
-);
+
+btn.addEventListener("click", displayMessage());
