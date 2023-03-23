@@ -1,4 +1,5 @@
 function displayMessage(inpuText, messageType) {
+
   const body = document.body;
 
   const panel = document.createElement("div");
@@ -15,6 +16,11 @@ function displayMessage(inpuText, messageType) {
 
   closeBtn.addEventListener("click", () => panel.parentNode.removeChild(panel));
 
+  const btn = document.querySelector("button");
+  btn.addEventListener("click", () =>
+    displayMessage("Task failed successfully.", "warning")
+  );
+
   if (messageType === "warning") {
     msg.style.backgroundImage = "url(../img/warning.png)";
     panel.style.backgroundColor = "red";
@@ -25,10 +31,3 @@ function displayMessage(inpuText, messageType) {
     msg.style.paddingLeft = "20px";
   }
 }
-// displayMessage("Hi there","");
-
-const btn = document.querySelector("button");
-
-btn.addEventListener("click", () =>
-  displayMessage("Brian: Hi there, how are you today?", "chat")
-);
