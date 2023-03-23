@@ -6,7 +6,7 @@ function displayMessage(inpuText, messageType) {
   body.appendChild(panel);
 
   const msg = document.createElement("p");
-  msg.textContent = "This is a message box";
+  msg.textContent = inpuText;
   panel.appendChild(msg);
 
   const closeBtn = document.createElement("button");
@@ -19,16 +19,16 @@ function displayMessage(inpuText, messageType) {
     msg.style.backgroundImage = "url(../img/warning.png)";
     panel.style.backgroundColor = "red";
   } else if (msgType === "chat") {
-    msg.style.backgroundImage = "url(icons/chat.png)";
+    msg.style.backgroundImage = "url(../img/chat.png)";
     panel.style.backgroundColor = "aqua";
   } else {
     msg.style.paddingLeft = "20px";
   }
 }
 
-// displayMessage();
+displayMessage();
 
 const button = document.querySelector("button");
 btn.addEventListener("click", () =>
-  displayMessage("Woo this is a different message!")
+  displayMessage("Woo this is a different message!"," erfqwef")
 );
