@@ -26,8 +26,9 @@ function displayMessage(inpuText, messageType) {
   }
 }
 // displayMessage("Hi there","");
-displayMessage("Your inbox is almost full — delete some mails", "chat");
 
-const button = document.querySelector("button");
+const btn = document.querySelector("button");
 
-btn.addEventListener("click", displayMessage());
+btn.addEventListener("click", () =>
+  displayMessage("Brian: Hi there, how are you today?", "chat")
+);
