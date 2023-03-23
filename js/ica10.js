@@ -16,11 +16,6 @@ function displayMessage(inputText, messageType) {
 
   closeBtn.addEventListener("click", () => panel.parentNode.removeChild(panel));
 
-  const btn = document.querySelector("button");
-  btn.addEventListener("click", () =>
-    displayMessage("Task failed successfully.", "warning")
-  );
-
   if (messageType === "warning") {
     msg.style.backgroundImage = "url(../img/warning.png)";
     panel.style.backgroundColor = "red";
@@ -31,3 +26,8 @@ function displayMessage(inputText, messageType) {
     msg.style.paddingLeft = "20px";
   }
 }
+
+const btn = document.querySelector("button");
+  btn.addEventListener("click", () =>
+    displayMessage("Task failed successfully.", "warning")
+  );
