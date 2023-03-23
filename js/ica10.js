@@ -1,4 +1,4 @@
-function displayMessage(inpuText, messageType) {
+function displayMessage(inputText, messageType) {
 
   const body = document.body;
 
@@ -7,7 +7,7 @@ function displayMessage(inpuText, messageType) {
   body.appendChild(panel);
 
   const msg = document.createElement("p");
-  msg.textContent = inpuText;
+  msg.textContent = inputText;
   panel.appendChild(msg);
 
   const closeBtn = document.createElement("button");
