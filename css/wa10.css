@@ -1,11 +1,34 @@
 html{
-  background-color: #171717;
+
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  
+  --background-greyVal: 23; /* The page's background color */
+  --background-greyColor: rgb(
+    var(--background-greyVal),
+    var(--background-greyVal),
+    var(--background-greyVal)
+  );
+
+  background-color: var(--background-greyColor);
   color: rgb(220,220,220);
+
+  --warning-line-angle: 45deg; /* Line angle */
+
+  overflow: hidden;
 }
 
 h1 {
     font-family: helvetica, arial, sans-serif;
     text-align: center;
+
+    background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0),
+      var(--background-greyColor) 30%,
+      var(--background-greyColor) 70%,
+      rgba(0, 0, 0, 0)
+    );
   }
   
   body {
@@ -46,4 +69,48 @@ h1 {
     width: 20%;
     float: left;
     cursor: pointer;
+  }
+  
+  .stripeBox {
+    z-index: -10;
+
+    --warning-line-color: rgba(187, 87, 87, 0.8); /* Can be overwritten inline!*/
+    --lineWidth: 3em; /* The width of the individual stripes */
+    --stripeRate: 45s; /* The time it takes for the stripes to move 1 length. Default is 5 seconds (Pretty slow!) */
+  
+    /* The amount of horizontal shift required for the pattern to reach a point at which it is the same as it was: */
+    --lineDelta: calc(
+      calc(-4 * var(--lineWidth)) / 1.414213562373095048801688724209
+    );
+    /* Divided by square root specifically for the 45 degree angle. Does not work with other angles! Set to 0 (zero) for 90 deg */
+  
+    position: absolute; /* These will be placed relative to their containers */
+    transform: translateY(-50%); /* Takes centerpoint height = --vOff */
+    top: var(
+      --vOff
+    ); /* Passed inline to each element. Stands for vertical offset */
+  
+    width: calc(100% + 3 * var(--lineWidth));
+    height: 2em;
+  
+    --starting-point: calc( var(--lineDelta) * calc( calc( var(--direction) + 1 ) / 2 ) ); /* Start at delta*((d+1)/2) : 0 for -1, -delta for 1 */
+    --ending-point: calc( var(--lineDelta) * calc( calc( var(--direction) - 1 ) / -2 ) ); /* End at delta*((d-1)/-2) : delta for -1, 0 for 1 */
+  
+    background-image: repeating-linear-gradient(
+      var(--warning-line-angle),
+      var(--warning-line-color),
+      var(--warning-line-color) var(--lineWidth),
+      rgba(0, 0, 0, 0) var(--lineWidth),
+      rgba(0, 0, 0, 0) calc(var(--lineWidth) * 2)
+    );
+  
+    animation: moveStripes var(--stripeRate) linear 0s infinite forwards;
+  }
+  @keyframes moveStripes {
+    from {
+      left: var(--starting-point);
+    }
+    to {
+      left: var(--ending-point);
+    }
   }

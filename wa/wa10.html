@@ -10,7 +10,18 @@
   </head>
 
   <body>
-    <h1>Image gallery example</h1>
+
+    <div class="stripeBox" style="--vOff: calc( 100% / 6); --direction: 1; --warning-line-color: rgba(187, 87, 87, 0.25);"></div>
+    <div class="stripeBox" style="--vOff: calc( 500% / 6); --direction: 1; --warning-line-color: rgba(187, 87, 87, 0.25)"></div>
+
+    <!--Inner two:-->
+    <div class="stripeBox" style="--vOff: calc( 200% / 6); --direction: -1; --warning-line-color: rgba(187, 87, 87, 0.12); --stripeRate: 65s;"></div>
+    <div class="stripeBox" style="--vOff: calc( 400% / 6); --direction: -1; --warning-line-color: rgba(187, 87, 87, 0.12); --stripeRate: 65s;"></div>
+
+    <!--Innermost:-->
+    <div class="stripeBox" style="--vOff: calc( 300% / 6); --direction: 1; --warning-line-color: rgba(187, 87, 87, 0.05); --stripeRate: 85s"></div>
+
+    <h1>IMAGE GALLERY</h1>
 
     <div class="full-img">
       <img class="displayed-img" src="../img/wa10/customPics/picture1.jpg" alt="Closeup of a human eye">
@@ -22,6 +33,8 @@
 
 
     </div>
+
+    
     <script src="../js/wa10.js"></script>
   </body>
 </html>
