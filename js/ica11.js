@@ -10,7 +10,7 @@ async function fetchQuestion(){
             throw Error(obtainedQuestion.statusText);
         }
         const json = await obtainedQuestion.json();
-        console.log(json);
+        displayQuote(json.question);
     } catch(err){
         console.log(err);
         alert("Failed to fetch the new question!");
