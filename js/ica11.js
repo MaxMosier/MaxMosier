@@ -1,4 +1,4 @@
-const button = document.querySelector("#js-quote-text");
+const button = document.querySelector("#js-new-quote");
 
 button.addEventListener('click', fetchQuestion);
 
