@@ -1,6 +1,11 @@
 body {
+
+    height: 100%;
+    width: 100%;
     background-color: #663232;
     color: #e2e2d0;
+
+    font-family: 'Georgia','Courier',sans-serif;
 
     display: flex;
     align-items: center;
@@ -9,4 +14,5 @@ body {
 
 #main-content{
     background-color: #665050;
+    padding: 2.5em;
 }
