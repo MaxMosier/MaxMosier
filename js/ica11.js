@@ -5,12 +5,12 @@ const apiEndpoint= "https://trivia.cyberwisp.com/getrandomchristmasquestion";
 
 async function fetchQuestion(){
     try {
-        const obtainedQuestion = await fetch(endpoint);
+        const obtainedQuestion = await fetch(apiEndpoint);
         if(!obtainedQuestion.ok){
             throw Error(obtainedQuestion.statusText);
         }
         const json = await obtainedQuestion.json();
-        displayQuote(json.question);
+        displayQuestion(json.question);
     } catch(err){
         console.log(err);
         alert("Failed to fetch the new question!");
@@ -21,3 +21,5 @@ function displayQuestion(inQuestion){
     const questionText = document.querySelector("#js-quote-text");
     questionText.textContent = inQuestion;
 }
+
+fetchQuestion();
