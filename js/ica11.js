@@ -1,16 +1,25 @@
-const button = document.querySelector("#js-new-quote");
-button.addEventListener('click', fetchQuestion);
+const qButton = document.querySelector("#js-new-quote");
+qButton.addEventListener('click', () => fetchContent(1));
+const aButton = document.querySelector("#js-tweet"); //I'll change the name later if I've the time to.
+aButton.addEventListener('click', () => fetchContent(0));
 
 const apiEndpoint= "https://trivia.cyberwisp.com/getrandomchristmasquestion";
 
-async function fetchQuestion(){
+async function fetchContent(questionOrAnswer){
     try {
         const obtainedQuestion = await fetch(apiEndpoint);
         if(!obtainedQuestion.ok){
             throw Error(obtainedQuestion.statusText);
         }
         const json = await obtainedQuestion.json();
-        displayQuestion(json.question);
+        if(questionOrAnswer > 0){ //If input is greater than 0, gives question
+            displayQuestion(json.question);
+            console.log("New question given");
+        }
+        else{ //If equal to or less than 0, gives answer
+            displayAnswer(json.answer);
+            console.log("New answer given");
+        }
     } catch(err){
         console.log(err);
         alert("Failed to fetch the new question!");
@@ -22,4 +31,9 @@ function displayQuestion(inQuestion){
     questionText.textContent = inQuestion;
 }
 
-fetchQuestion();
+function displayAnswer(inAnswer){
+    let questionText = document.querySelector('#js-quote-text');
+    inAnswer = '\n' + inAnswer; // Add newline
+    questionText.textContent += inAnswer;
+}
+fetchContent(1);
