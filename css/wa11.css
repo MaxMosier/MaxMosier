@@ -1,36 +1,63 @@
 html {
-    height: 100%;
-    width: 100%;
-    background-color: #663232;
-    color: #e2e2d0;
+	height: 100%;
+	width: 100%;
+	background-color: #663232;
+    background-image: radial-gradient(#0000,#1117);
+	color: #e2e2d0;
 
-    font-family: "Georgia", "Courier", sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 #main-content {
-    text-align: center;
-    background-color: #665050;
-    padding: 1em 2.5em;
+	display: flex;
+
+	text-align: center;
+	background-color: #2c1919;
+    box-shadow: 0 0 3em #663232FF;
+	padding: 1em 2.5em;
+
+	min-height: 40vh;
+
+	flex-direction: column;
+	align-items: center;
+    justify-content: center;
 }
 
 h1,
 p {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	font-size: 1.5em;
+}
+
+h1 {
+	font-size: 3em;
 }
 
 button {
-    margin: 1em;
-    background-color: white;
-    color: black;
+	color: black;
+	font-weight: bold;
+	font-size: 1em;
 
-    border-radius: 0.5em;
+	margin: 1em;
+	border-radius: 0.5em;
+
+	background-color: white;
+	border: none;
+
+	cursor: pointer;
+	padding: 0.5em;
+
+	width: 50%;
 }
 
 button:hover {
-    background-color: black;
+	background-color: black;
 }
