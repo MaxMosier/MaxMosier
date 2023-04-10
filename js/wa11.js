@@ -1,5 +1,14 @@
 // A quick function for converting day names to Japanese symbols:
 function convertDayToJapanese(day) {
+
+	let newDay = day.toLowerCase();
+	let isNight = false;
+	if(newDay.includes("night")){
+		isNight = true;
+		newDay = newDay.replaceAll("night",""); //Get rid of "nights"
+		newDay = newDay.replaceAll(" ",""); //Get rid of spaces
+	}
+
 	switch (day.toLowerCase()) {
 		case "sunday":
 			return "日";
@@ -16,7 +25,7 @@ function convertDayToJapanese(day) {
 		case "saturday":
 			return "土";
 		default:
-			return "!ERROR!";
+			return "!!ERROR!!";
 	}
 }
 
@@ -37,6 +46,11 @@ function refreshWeatherInfo() {
 
 			// Extract the data! It's stored as "periods"
 			const forecast = data.properties.periods;
+			// Now, the forecast will also include afternoon if you view it early enough.
+			// I only want whole day predictions, so I'm cutting that off if it's present.
+			if(forecast[0].name.toLowerCase().includes("afternoon")){
+				forecast.shift();
+			}
 
 			// Get the div elements to update
 			const daysAbove = Array.from(
@@ -48,7 +62,7 @@ function refreshWeatherInfo() {
 			const dayNames = Array.from(document.querySelectorAll(".day-name"));
 
 			// Update each day element with the forecast data
-			for (let i = 1; i <= daysAbove.length * 2; i += 2) {
+			for (let i = 1; i <= daysAbove.length * 2; i += 2) { //Starts at i=1 so "tonight" is immediately cut off.
 				const dayIndex = Math.ceil(i / 2) - 1;
 
 				const upperData = forecast[i];
