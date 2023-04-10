@@ -78,7 +78,7 @@ button:hover {
 
 .day-zone .upper-day-zone,
 .day-zone .lower-day-zone {
-	background-color: red;
+	background-color: rgb(215, 215, 215);
 	padding: 1em;
 }
 
@@ -86,9 +86,17 @@ button:hover {
 	border-radius: 1em 1em 0 0;
 }
 
+/* .upper-day-zone::before {
+	content: "☼: ";
+} */
+
 .lower-day-zone {
 	border-radius: 0 0 1em 1em;
 }
+
+/* .lower-day-zone::before {
+	content: "☾: ";
+} */
 
 .day-name {
 	background-color: #0000;
