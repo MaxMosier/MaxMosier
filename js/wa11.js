@@ -6,10 +6,12 @@ const long = 92;
 const url = `https://api.weather.gov/gridpoints/GJT/${lat},${long}/forecast`;
 
 // Get the forecast data from the API
+function refreshWeatherInfo(){
 fetch(url)
     .then((response) => response.json())
     .then((data) => {
         // console.log(data); // Was using this for debugging. Don't need it right now, but am keeping it!
+        console.log("Weather data refreshing...");
 
         // Extract the data! It's stored as "periods"
         const forecast = data.properties.periods;
@@ -35,5 +37,13 @@ fetch(url)
             const dayOfWeek = upperData.name;
             dayNames[dayIndex].textContent = dayOfWeek;
         }
+
+        console.log("Weather data refreshed!");
     })
     .catch((error) => console.error(error));
+}
+
+refreshWeatherInfo();
+
+const refreshButton = document.getElementById("refresher");
+refreshButton.addEventListener("click", refreshWeatherInfo);
