@@ -17,6 +17,28 @@ html {
     overflow: hidden;
 }
 
+#paragraph-description{
+
+    backdrop-filter: blur(50px);
+	background-color: #c0c0c096;
+	box-shadow: 0 0 3em #000000; 
+
+    padding: 1em;
+    margin: 3em;
+
+    font-size: .8em;
+
+    box-sizing: border-box;
+    max-width: 40em;
+    max-height: 15em;
+    margin-left: auto;
+    margin-right: auto;
+
+    overflow-y: scroll;
+    /* text-indent: 30px; */
+
+}
+
 #main-content {
 	display: flex;
 
@@ -88,37 +110,47 @@ button:hover {
 
 .day-zone .upper-day-zone,
 .day-zone .lower-day-zone {
-	background-color: rgb(215, 215, 215);
+	background-color: #e0e0e0;
 	padding: 1em;
 }
-
-.upper-day-zone {
-	border-radius: 1em 1em 0 0;
-}
-
-/* .upper-day-zone::before {
-	content: "☼: ";
-} */
 
 .lower-day-zone {
 	border-radius: 0 0 1em 1em;
 }
 
-/* .lower-day-zone::before {
-	content: "☾: ";
-} */
-
 .day-name {
+    color: #e0e0e0;
+    padding-bottom: 0.2em;
 	background-color: #0000;
 	font-weight: bold;
 	font-size: 1.5em;
 }
 
 #days-container > div {
-	background-color: #ddddff5f;
-	border: solid black 1px;
+	background-color: #222222;;
+	/* border: solid black 1px; */
+
 	padding: 0.5em;
 	margin: 0.1em;
 	border-radius: 1em;
 	min-width: 3em;
 }
+
+::-webkit-scrollbar {
+    width: 0.7em;
+    height: 0.7em;
+    background-color: #171717;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #323232a0;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #171717;
+    box-shadow: 0 0 0.8em 0.1em #171717a0 ;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #eeeeee;
+    box-shadow: 0 0 0.5em 0.1em #aaaaaaf0
+  }
