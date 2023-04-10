@@ -1,3 +1,25 @@
+// A quick function for converting day names to Japanese symbols:
+function convertDayToJapanese(day) {
+	switch (day.toLowerCase()) {
+		case "sunday":
+			return "日";
+		case "monday":
+			return "月";
+		case "tuesday":
+			return "火";
+		case "wednesday":
+			return "水";
+		case "thursday":
+			return "木";
+		case "friday":
+			return "金";
+		case "saturday":
+			return "土";
+		default:
+			return "!ERROR!";
+	}
+}
+
 // Gridpoints:
 const lat = 149;
 const long = 92;
@@ -37,7 +59,7 @@ function refreshWeatherInfo() {
 				const lowTemp = lowerData.temperature;
 				daysBelow[dayIndex].textContent = `Low: ${lowTemp}°F`;
 
-				const dayOfWeek = upperData.name;
+				const dayOfWeek = convertDayToJapanese(upperData.name);
 				dayNames[dayIndex].textContent = dayOfWeek;
 			}
 
