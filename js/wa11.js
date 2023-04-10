@@ -17,21 +17,23 @@ fetch(url)
         // Get the div elements to update
         const daysAbove = Array.from(document.querySelectorAll(".upper-day-zone"));
         const daysBelow = Array.from(document.querySelectorAll(".lower-day-zone"));
+        const dayNames = Array.from(document.querySelectorAll(".day-name"));
 
         // Update each day element with the forecast data
-        for (let i = 1; i <= days.length*2; i += 2) {
+        for (let i = 1; i <= daysAbove.length*2; i += 2) {
 
-            const dayIndex = Math.ceil(i/2);
+            const dayIndex = Math.ceil(i/2)-1;
 
             const upperData = forecast[i];
             const highTemp = upperData.temperature;
-            daysAbove[n].textContent = `High: ${highTemp}°F`;
+            daysAbove[dayIndex].textContent = `High: ${highTemp}°F`;
 
             const lowerData = forecast[i+1];
             const lowTemp = lowerData.temperature;
-            daysBelow[n].textContent = `Low: ${lowTemp}°F`;
+            daysBelow[dayIndex].textContent = `Low: ${lowTemp}°F`;
 
             const dayOfWeek = upperData.name;
+            dayNames[dayIndex].textContent = dayOfWeek;
         }
     })
     .catch((error) => console.error(error));
