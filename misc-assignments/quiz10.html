@@ -3,17 +3,7 @@
   <head>
     <meta charset="utf-8"/>
     <title>JSON: Task 1</title>
-    <style>
-      p {
-        color: purple;
-        margin: 0.5em 0;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-    </style>
-    <!-- <link rel="stylesheet" href="../styles.css" /> -->
+    <link rel="stylesheet" href="quiz10.css" />
   </head>
 
   <body>
@@ -44,11 +34,33 @@
 
       // Add your code here
 
-      //Append the names of the mother cats to the end of that string above:
-      for(let i = 0; i < catString.length-1; i++){
-        motherInfo += catString[i].name + ", "; 
+      //Did everything in one loop to make it a bit more efficient!
+
+      motherCount = catString.length; // Did this to reduce calls to catString.length
+      
+      for(let i = 0; i < motherCount; i++){
+
+        // Append the names of the mothers to motherInfo:
+        if(i != motherCount-1){ // Don't add the last mother's name quite yet!
+          motherInfo += catString[i].name + ", ";
+        }
+
+        // Now begin counting the kittens:
+
+        for(let k = 0; k < catString[i].kittens.length; k++){
+          // Only increment male. I can calculate females in a single operation later by subtracting males from total:
+          if(catString[i].kittens[k].gender == "m"){
+            male++;
+          }
+        }
+        total += catString[i].kittens.length; // Was gonna' put in loop above, but realized I can just do this for greater efficiency!
+
       }
-      motherInfo += "and " + catString[catString.length-1].name + ".";
+
+      // Also added an exceptional case for the end of the motherInfo string (and I did use an Oxford comma here):
+      motherInfo += "and " + catString[motherCount-1].name + ".";
+
+      kittenInfo = `There are ${total} total kittens! ${male} are male, and ${total-male} are female.`
 
       // Don't edit the code below here!
 
