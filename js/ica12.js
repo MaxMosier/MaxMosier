@@ -72,7 +72,7 @@ function drawloop(){
     ctx.fillRect(0,0,width,height);
 
     for(const ball of ballSet){
-        ball.draw();
+        ball.display();
         ball.update();
     }
 
