@@ -30,6 +30,15 @@ class Ball{
         ctx.fill();
 
     }
+
+    updatePosition(){
+        this.x += this.vX;
+        this.y += this.vY;
+    }
 }
 
-const testBall = new Ball(100, 100, 1, -1, randomRGB(), random(8,34));
+let ballSet = [];
+for(let i = 0; i < 50; i++){
+    ballSet.push(new Ball(random(0, width),random(0, height), random(-2,2), random(-2,2), randomRGB(), random(8,34)));
+    ballSet[i].draw();
+}
