@@ -48,7 +48,7 @@ function refreshWeatherInfo() {
 			const forecast = data.properties.periods;
 			// Now, the forecast will also include afternoon if you view it early enough.
 			// I only want whole day predictions, so I'm cutting that off if it's present.
-			if(forecast[0].name.toLowerCase().includes("afternoon")){
+			if(forecast[0].name.toLowerCase().includes("afternoon")||forecast[0].name.toLowerCase().includes("today")){
 				forecast.shift();
 			}
 
