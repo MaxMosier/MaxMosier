@@ -11,3 +11,25 @@ function random(min, max){
 function randomRGB(){
     return `rgb(${random(0, 255)},rgb(${random(0, 255)},rgb(${random(0, 255)})`
 }
+
+class Ball{
+
+    constructor(x, y, vX, vY, color, size) {
+        this.x = x;
+        this.y = y;
+        this.vX = vX;
+        this.vY = vY;
+        this.color = color;
+        this.size = size;
+    }
+
+    display(){
+        ctx.beginPath();
+        ctx.fillStyle = this.color;
+        ctx.arc(this.x, this,y, this.size, 0, 2*Math.PI);
+        ctx.fill();
+
+    }
+}
+
+const testBall = new Ball(100, 100, 1, -1, randomRGB(), random(8,34));
