@@ -1,0 +1,18 @@
+html{
+    display: flex;
+	align-items: center;
+	justify-content: center;
+
+    background-color: #373737;
+    background-image: radial-gradient(#0000, #1114);
+
+    height: 100%;
+    width: 100%;
+
+    font-family: Helvetica, Arial, sans-serif;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #e0e0e0e0;
+}
