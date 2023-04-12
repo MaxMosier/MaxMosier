@@ -61,7 +61,7 @@ for (let i = 0; i < 50; i++) {
         random(-2, 2),
         random(-2, 2),
         randomRGB(),
-        ballSize()
+        ballSize
     )
     ballSet.push(newBall);
 }
