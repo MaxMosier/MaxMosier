@@ -25,7 +25,7 @@ class Ball {
     display() {
         ctx.beginPath();
         ctx.fillStyle = this.color;
-        ctx.arc(this.x, this, y, this.size, 0, 2 * Math.PI);
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
         ctx.fill();
     }
 
@@ -73,9 +73,8 @@ function drawloop(){
 
     for(const ball of ballSet){
         ball.display();
-        ball.update();
+        ball.updatePosition();
     }
-
     requestAnimationFrame(loop);
 }
 
