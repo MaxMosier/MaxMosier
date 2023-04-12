@@ -54,17 +54,16 @@ class Ball {
 let ballSet = [];
 
 for (let i = 0; i < 50; i++) {
-    ballSize = random(8, 28);
-    ballSet.push(
-        new Ball(
-            random(0, width),
-            random(0, height),
-            random(-2, 2),
-            random(-2, 2),
-            randomRGB(),
-            ballSize()
-        )
-    );
+    let ballSize = random(8, 28);
+    let newBall = new Ball(
+        random(0, width),
+        random(0, height),
+        random(-2, 2),
+        random(-2, 2),
+        randomRGB(),
+        ballSize()
+    )
+    ballSet.push(newBall);
 }
 
 function drawloop(){
