@@ -26,6 +26,19 @@ let jsonString = `{
     ]
 }`;
 
-let companyObject = JSON.parse(jsonString);
+console.log("The original JSON string was: ");
+console.log(jsonString);
 
+console.log("The current state of the object is as follows");
+let companyObject = JSON.parse(jsonString);
 console.log(companyObject);
+
+console.log("Now adding the following employee:");
+let newEmployee = {
+    "firstName" : "Anna",
+    "department" : "Tech",
+    "designation" : "Executive",
+    "salary" : 21200,
+    "raiseElligible" : false
+};
+console.log(newEmployee);
