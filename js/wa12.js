@@ -97,7 +97,32 @@ for(const individual of companyObject.employees){
     console.log('\t' + individual.firstName + " : " + individual.salary);
 }
 
-// Step 6 : 
+// Step 6 : Designate some workers as "from home"
+
+console.log("Setting work from home status for all employees...");
+
+let wfhEmployees = ["Anna", "Sam"];
+
+for(let n = 0; n < companyObject.employees.length; n++){
+    let isWFH = false;
+    for(let s = 0; s < wfhEmployees.length; s++){
+        if(companyObject.employees[n].firstName == wfhEmployees[s]){
+            isWFH = true;
+        }
+    }
+    //Will also add "false" to those not in the list.
+    companyObject.employees[n].wfh = isWFH;
+}
+
+console.log("List of employees' WFH statuses:");
+for(const individual of companyObject.employees){
+    const statusString = (individual.wfh)?" works from home":" works in office";
+    console.log('\t' + individual.firstName + statusString);
+}
+
+console.log("And that concludes this assignment!");
+console.log("Final object below:");
+console.log(companyObject);
 
 function addCommas(num) {
 
