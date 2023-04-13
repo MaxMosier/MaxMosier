@@ -1,27 +1,27 @@
 let text = {
-    companyName: "Tech Stars",
-    website: "www.techstars.site",
-    employees: [
+    "companyName": "Tech Stars",
+    "website": "www.techstars.site",
+    "employees": [
         {
-            firstName: "Sam",
-            department: "Tech",
-            designation: "Manager",
-            salary: 40000,
-            raiseElligible: true,
+            "firstName": "Sam",
+            "department": "Tech",
+            "designation": "Manager",
+            "salary": 40000,
+            "raiseElligible": true
         },
         {
-            firstName: "Mary",
-            department: "Finance",
-            designation: "Trainee",
-            salary: 18500,
-            raiseElligible: true,
+            "firstName": "Mary",
+            "department": "Finance",
+            "designation": "Trainee",
+            "salary": 18500,
+            "raiseElligible": true
         },
         {
-            firstName: "Bill",
-            department: "HR",
-            designation: "Executive",
-            salary: 21200,
-            raiseElligible: false,
-        },
-    ],
-};
+            "firstName": "Bill",
+            "department": "HR",
+            "designation": "Executive",
+            "salary": 21200,
+            "raiseElligible": false
+        }
+    ]
+}
