@@ -8,23 +8,36 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function randomSign(){
+    return 2*Math.floor(Math.random()*2)-1;
+}
+
+// Obsolete :
 function randomHSL(hMin, hMax, sMin, sMax, lMin, lMax) {
     return `hsl(${random(hMin, hMax)},${random(sMin, sMax)}%,${random(lMin, lMax)}%)`;
 }
 
+function toHSL(iH, iS, iL){
+    return `hsl(${iH},${iS}%,${iL}%)`;
+}
+
 class Ball {
-    constructor(x, y, vX, vY, color, size) {
+
+    constructor(x, y, vX, vY, size, h, s, l) {
         this.x = x;
         this.y = y;
         this.vX = vX;
         this.vY = vY;
-        this.color = color;
         this.size = size;
+
+        this.h = h;
+        this.s = s;
+        this.l = l;
     }
 
     display() {
         ctx.beginPath();
-        ctx.fillStyle = this.color;
+        ctx.fillStyle = `hsl(${this.h}, ${this.s}%, ${this.l}%)`;
         ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
         ctx.fill();
     }
@@ -58,10 +71,12 @@ for (let i = 0; i < 100; i++) {
     let newBall = new Ball(
         random(0, width),
         random(0, height),
-        random(0, 5),
-        random(0, 5),
-        randomHSL(180, 360, 80, 90, 20, 80),
-        ballSize
+        randomSign()*random(1, 5),
+        randomSign()*random(1, 5),
+        ballSize,
+        random(240, 360),
+        random(20,40),
+        random(20, 80)
     )
     ballSet.push(newBall);
 }
