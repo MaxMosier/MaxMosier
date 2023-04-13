@@ -81,13 +81,13 @@ console.log("Sum of employee salaries is " + addCommas(salarySum));
 
 // Step 5 : Raise time!
 
-console.log("Giving all elligible employees raises...");
+console.log("Giving all eligible employees raises...");
 
 /* This could of course had been done in the previous loop for greater efficiency,
    but it made the steps more distinct to separate them. Would have used some incrementing
    variable to keep track of current position in array */
 for(let n = 0; n < companyObject.employees.length; n++){
-    if(companyObject.employees[n].raiseElligible){
+    if(companyObject.employees[n].raiseEligible){
         companyObject.employees[n].salary *= 1.1; // Add 10 percent of existing value
     }
 }
