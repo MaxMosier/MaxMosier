@@ -74,7 +74,7 @@ function drawloop(){
         ball.display();
         ball.updatePosition();
     }
-    requestAnimationFrame(loop);
+    requestAnimationFrame(drawLoop);
 }
 
 drawloop();
