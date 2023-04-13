@@ -1,41 +1,59 @@
-// Step 1: Make the JSON
-// (I wrote it as a string to start, for the sake of practicing doing so)
+// STEP 1 : Make the JSON for the employees:
+/* I wrote these as strings to start, since that was my understanding of what we were to do.
+   Of course, I could have just removed the ` marks to make this directly declare an object. */
+console.log("Creating JSON (strings) for the three initial employees:");
+
+const samJSON = `{
+    "firstName": "Sam",
+    "department": "Tech",
+    "designation": "Manager",
+    "salary": 40000,
+    "raiseEligible": true
+}`;
+console.log(samJSON);
+
+const maryJSON = `{
+    "firstName": "Mary",
+    "department": "Finance",
+    "designation": "Trainee",
+    "salary": 18500,
+    "raiseEligible": true
+}`;
+console.log(maryJSON);
+
+const billJSON = `{
+    "firstName": "Bill",
+    "department": "HR",
+    "designation": "Executive",
+    "salary": 21200,
+    "raiseEligible": false
+}`;
+console.log(billJSON);
+
+// STEP 2 : Make the JSON for the company
+
+console.log("Creating the JSON string for the company object:")
+
 const jsonString = `{
     "companyName": "Tech Stars",
     "website": "www.techstars.site",
     "employees": [
-        {
-            "firstName": "Sam",
-            "department": "Tech",
-            "designation": "Manager",
-            "salary": 40000,
-            "raiseElligible": true
-        },
-        {
-            "firstName": "Mary",
-            "department": "Finance",
-            "designation": "Trainee",
-            "salary": 18500,
-            "raiseElligible": true
-        },
-        {
-            "firstName": "Bill",
-            "department": "HR",
-            "designation": "Executive",
-            "salary": 21200,
-            "raiseElligible": false
-        }
     ]
 }`;
 
-console.log("The original JSON string was: ");
-console.log(jsonString);
+console.log("Adding existing employees to the company's 'employees' array...")
+// And add the employees to the company employee list:
+const companyObject = JSON.parse(companyJSON);
+companyObject.employees.push(JSON.parse(samJSON));
+companyObject.employees.push(JSON.parse(maryJSON));
+companyObject.employees.push(JSON.parse(billJSON));
 
-console.log("The current state of the object is as follows");
-let companyObject = JSON.parse(jsonString);
+console.log("The current state of the company object is now as follows:");
 console.log(companyObject);
 
-console.log("Now adding the following employee:");
+// STEP 3 : Add Anna!
+
+console.log("Now adding the following new employee:");
 let newEmployee = {
     "firstName" : "Anna",
     "department" : "Tech",
@@ -48,6 +66,8 @@ companyObject.employees.push(newEmployee);
 
 console.log("So the company employee list is now:");
 console.log(companyObject.employees);
+
+// Step 4 : Calculate sum of employee salaries:
 
 console.log("Calculating sum of employee salaries...");
 
