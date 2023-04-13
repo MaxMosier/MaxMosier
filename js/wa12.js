@@ -43,7 +43,7 @@ const jsonString = `{
 
 console.log("Adding existing employees to the company's 'employees' array...")
 // And add the employees to the company employee list:
-const companyObject = JSON.parse(companyJSON);
+const companyObject = JSON.parse(jsonString);
 companyObject.employees.push(JSON.parse(samJSON));
 companyObject.employees.push(JSON.parse(maryJSON));
 companyObject.employees.push(JSON.parse(billJSON));
@@ -58,8 +58,8 @@ let newEmployee = {
     "firstName" : "Anna",
     "department" : "Tech",
     "designation" : "Executive",
-    "salary" : 21200,
-    "raiseElligible" : false
+    "salary" : 25600,
+    "raiseEligible" : false
 };
 console.log(newEmployee);
 companyObject.employees.push(newEmployee);
@@ -79,6 +79,25 @@ for(const individual of companyObject.employees){
 
 console.log("Sum of employee salaries is " + addCommas(salarySum));
 
+// Step 5 : Raise time!
+
+console.log("Giving all elligible employees raises...");
+
+/* This could of course had been done in the previous loop for greater efficiency,
+   but it made the steps more distinct to separate them. Would have used some incrementing
+   variable to keep track of current position in array */
+for(let n = 0; n < companyObject.employees.length; n++){
+    if(companyObject.employees[n].raiseElligible){
+        companyObject.employees[n].salary *= 1.1; // Add 10 percent of existing value
+    }
+}
+
+console.log("The employees' salaries are now as follows:");
+for(const individual of companyObject.employees){
+    console.log('\t' + individual.firstName + " : " + individual.salary);
+}
+
+// Step 6 : 
 
 function addCommas(num) {
 
