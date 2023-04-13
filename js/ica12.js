@@ -23,6 +23,8 @@ function toHSL(iH, iS, iL){
 
 class Ball {
 
+    seen = false;
+
     constructor(x, y, vX, vY, size, h, s, l) {
         this.x = x;
         this.y = y;
@@ -43,31 +45,33 @@ class Ball {
     }
 
     updatePosition() {
+        // Speed checkers:
+        if(this.speed < 1){
+            this.speed = 3;
+        }
+
+        // Position checkers
         if (this.x + this.size >= width) {
             this.vX = -this.vX;
             this.x = width-this.size;
-        }
-
-        if (this.x - this.size <= 0) {
+        }else if (this.x - this.size <= 0) {
             this.vX = -this.vX;
             this.x = this.size;
-        }
-
-        if (this.y + this.size >= height) {
+        }else if (this.y + this.size >= height) {
             this.vY = -this.vY;
             this.y = height-this.size;
-        }
-
-        if (this.y - this.size <= 0) {
+        }else if (this.y - this.size <= 0) {
             this.vY = -this.vY;
             this.y = this.size;
         }
 
+        // Update:
         this.x += this.vX;
         this.y += this.vY;
     }
 
     collisionDetect() {
+        this.seen = false;
         for (const ball of ballSet) {
            if (!(this === ball)) {
               const dx = this.x - ball.x;
@@ -75,8 +79,17 @@ class Ball {
               const distance = Math.sqrt(dx * dx + dy * dy);
   
               if (distance < this.size + ball.size) {
-                ball.h += 10;
-                this.h += 10;
+                if(ball.size > 2 && !ball.seen && this.size >= ball.size){
+                    this.seen = true;
+                    this.size += 0.01*ball.size;
+                    ball.size *= 0.99
+                    ball.vX *= 1.01;
+                    ball.vY *= 1.01;
+                    if(this.speed > 1){
+                        this.vY *= 0.99;
+                        this.vX *= 0.99;
+                    }
+                }
               }
            }
         }
@@ -86,15 +99,15 @@ class Ball {
 
 let ballSet = [];
 
-for (let i = 0; i < 500; i++) {
-    let ballSize = random(8, 14);
+for (let i = 0; i < 200; i++) {
+    let ballSize = random(3, 4);
     let newBall = new Ball(
         random(0, width),
         random(0, height),
-        randomSign()*random(1, 5),
-        randomSign()*random(1, 5),
+        randomSign()*random(1, 3),
+        randomSign()*random(1, 3),
         ballSize,
-        random(60, 300),
+        random(180, 360),
         random(40,60),
         random(30, 80)
     )
@@ -108,6 +121,7 @@ function drawloop(){
     for(const ball of ballSet){
         ball.display();
         ball.updatePosition();
+        ball.collisionDetect();
     }
     requestAnimationFrame(drawloop);
 }
