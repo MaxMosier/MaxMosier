@@ -1,4 +1,4 @@
-let text = {
+let jsonText = {
     "companyName": "Tech Stars",
     "website": "www.techstars.site",
     "employees": [
@@ -24,4 +24,8 @@ let text = {
             "raiseElligible": false
         }
     ]
-}
+};
+
+let companyObject = JSON.parse(jsonText);
+
+console.log(companyObject);
