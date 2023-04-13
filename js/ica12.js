@@ -50,6 +50,12 @@ class Ball {
             this.speed = 3;
         }
 
+        // Size check:
+
+        if(this.size > Math.min(width, height)){
+            this.size = Math.min(width,height);
+        }
+
         // Position checkers
         if (this.x + this.size >= width) {
             this.vX = -this.vX;
@@ -115,7 +121,7 @@ for (let i = 0; i < 200; i++) {
 }
 
 function drawloop(){
-    ctx.fillStyle = "#0001";
+    ctx.fillStyle = "#0004";
     ctx.fillRect(0,0,width,height);
 
     for(const ball of ballSet){
