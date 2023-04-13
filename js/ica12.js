@@ -8,8 +8,8 @@ function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function randomRGB() {
-    return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
+function randomHSL(hMin, hMax, sMin, sMax, lMin, lMax) {
+    return `hsl(${random(hMin, hMax)},${random(sMin, sMax)}%,${random(lMin, lMax)}%)`;
 }
 
 class Ball {
@@ -31,36 +31,36 @@ class Ball {
 
     updatePosition() {
         if (this.x + this.size >= width) {
-            this.velX = -this.velX;
+            this.vX = -this.vX;
         }
 
         if (this.x - this.size <= 0) {
-            this.velX = -this.velX;
+            this.vX = -this.vX;
         }
 
         if (this.y + this.size >= height) {
-            this.velY = -this.velY;
+            this.vY = -this.vY;
         }
 
         if (this.y - this.size <= 0) {
-            this.velY = -this.velY;
+            this.vY = -this.vY;
         }
 
-        this.x += this.velX;
-        this.y += this.velY;
+        this.x += this.vX;
+        this.y += this.vY;
     }
 }
 
 let ballSet = [];
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 100; i++) {
     let ballSize = random(8, 28);
     let newBall = new Ball(
         random(0, width),
         random(0, height),
-        random(-2, 2),
-        random(-2, 2),
-        randomRGB(),
+        random(0, 5),
+        random(0, 5),
+        randomHSL(180, 360, 80, 90, 20, 80),
         ballSize
     )
     ballSet.push(newBall);
