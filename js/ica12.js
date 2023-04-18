@@ -45,15 +45,11 @@ class Ball {
     }
 
     updatePosition() {
-        // Speed checkers:
-        if(this.speed < 1){
-            this.speed = 3;
-        }
 
         // Size check:
 
-        if(this.size > Math.min(width, height)){
-            this.size = Math.min(width,height);
+        if(2*this.size > Math.min(width, height)){
+            this.size = 0.5*Math.min(width,height);
         }
 
         // Position checkers
