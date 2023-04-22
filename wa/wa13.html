@@ -1,39 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-
-        <link rel="stylesheet" href="../css/wa13.css" />
-        <script defer src="../js/wa13.js"></script>
-    </head>
-    <body>
-        <div>
-            <p>Please select the volume you want to use:</p>
-            <p class="output">50</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annoying Volume Slider</title>
+    <link rel="stylesheet" href="../css/wa13.css">
+    <script src="../js/wa13.js" defer></script>
+</head>
+<body>
+    <div class="volumeBarHolder">
+        <div class="volume-bar">
+            <div class="volume-bar-inner" id="volumeBar"></div>
         </div>
-        <div>
-            <!-- Volume increment/decrement-ers -->
-            <form>
-                <input class="minus-button" type="button" name="minus-button" value="Minus">
-                <input class="plus-button" type="button" name="plus-button" value="Plus">
-                
-                <input class="reset-button" type="button" name="reset-button" value="Reset">
-                <input class="random-button" type="button" name="random-button" value="Random">
-                <input class="submit-button" type="button" name="submit-button" value="Submit">
-            </form>
-        </div>
-        <div>
-            <!-- Volume slider: -->
-            <div class="slidecontainer">
-                <p>Please select your desired volume:</p>
-                <input type="range" min="0" max="100" class="slider" id="myRange">
-                <input class="slider-submit-button" type="button" name="slider-submit-button" value="Submit">
-                <!-- Will display the current slider volume: -->
-                <p class="slider-output"></p>
-            </div>
-        </div>
-    </body>
+        <button id="tapButton">Tap to control volume</button>
+        <span id="volumeDisplay">0</span>%
+    </div>
+    <audio id="audioPlayer" src="../img/01Main.mp3" type="audio/mp3" loop autoplay></audio>
+</body>
 </html>
