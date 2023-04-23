@@ -1,7 +1,7 @@
 // Global variables
 let lastClickTimestamp = 0;
 let started = false;
-let timeTable = Array(3).fill(-1); // -1 will be the default value to indicate sections of the array not yet given values
+let timeTable = Array(15).fill(-1); // -1 will be the default value to indicate sections of the array not yet given values
 let currentIndex = 0; //Adds the 
 const tapButton = document.getElementById('tapButton');
 const volumeDisplay = document.getElementById('volumeDisplay');
