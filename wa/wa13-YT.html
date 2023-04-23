@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annoying Volume Slider</title>
+    <link rel="stylesheet" href="../css/wa13.css">
+    <!-- Only seems to work if I put this up here: -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../js/wa13-YT.js" defer></script>
+</head>
+<body>
+    <div class="volumeBarHolder">
+        <div class="volume-bar">
+            <div class="volume-bar-inner" id="volumeBar"></div>
+        </div>
+        <button id="tapButton">TAP ME</button>
+        <div class="volume-display-container">
+            <span id="volumeDisplay">0</span><span>%</span>
+        </div>
+    </div>
+    <div id="ytPlayer" style="display:none;"></div>
+</body>
+</html>
