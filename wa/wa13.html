@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Annoying Volume Slider</title>
     <link rel="stylesheet" href="../css/wa13.css">
-    <script src="../js/wa13TEST.js" defer></script>
+    <!-- Only seems to work if I put this up here: -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="../js/wa13.js" defer></script>
 </head>
 <body>
     <div class="volumeBarHolder">
         <div class="volume-bar">
             <div class="volume-bar-inner" id="volumeBar"></div>
         </div>
-        <button id="tapButton">Tap to control volume</button>
-        <span id="volumeDisplay">0</span>%
+        <button id="tapButton">TAP ME</button>
+        <div class="volume-display-container">
+            <span id="volumeDisplay">0</span><span>%</span>
+        </div>
     </div>
-    <audio id="audioPlayer" src="../img/01Main.mp3" type="audio/mp3" loop autoplay></audio>
+    <div id="ytPlayer" style="display:none;"></div>
 </body>
 </html>
