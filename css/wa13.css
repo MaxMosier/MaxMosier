@@ -1,3 +1,9 @@
+html{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
 body {
     margin: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -14,18 +20,18 @@ body {
 
 #tapButton{
     color: #222222;
-	font-weight: bold;
+	font-weight: bolder;
 
-	margin: 1em;
+	/* margin: 1em; */
 	border-radius: 0.5em;
 
 	background-color: #e0e0e0;
 	border: none;
 
 	cursor: pointer;
-	padding: 0.5em;
+	padding: 0.8em 1.5em;
 
-	width: 100px;
+	width: fit-content;
 }
 
 .volumeBarHolder {
@@ -33,10 +39,10 @@ body {
 }
 
 .volume-bar {
-    width: 50px;
-    height: 400px;
+    width: 3em;
+    height: 40vh;
     background-color: #2d1515;
-    margin: 0 auto 20px;
+    margin: 0 auto 2vh;
     position: relative;
     box-shadow: inset 0 0 1em #0d0404;
 }
@@ -58,4 +64,15 @@ body {
 
 .volume-display-container {
     text-align: center;
+    margin: 2vh;
 }
+
+/* Below snippet is from https://stackoverflow.com/questions/2310734/how-to-make-html-text-unselectable*/
+.non-selectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
