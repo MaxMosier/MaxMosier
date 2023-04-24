@@ -10,13 +10,14 @@
     <script src="../js/wa13.js" defer></script>
 </head>
 <body>
+    <h1 title="Volume percent is equal to the number of clicks in the past 10 seconds, minus 1 click every 0.22s">?</h1>
     <div class="volumeBarHolder">
         <div class="volume-bar">
             <div class="volume-bar-inner" id="volumeBar"></div>
         </div>
-        <button id="tapButton">TAP ME</button>
+        <button id="tapButton" class="non-selectable">TAP FAST</button>
         <div class="volume-display-container">
-            <span id="volumeDisplay">0</span><span>%</span>
+            <span id="volumeDisplay" class="non-selectable">0</span><span>%</span>
         </div>
     </div>
     <div id="ytPlayer" style="display:none;"></div>
