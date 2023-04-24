@@ -19,9 +19,9 @@
 - ICA8 : ∄
 - [ICA9](https://maxmosier.github.io/MaxMosier/ica/ica9.html)
 - [ICA10](https://maxmosier.github.io/MaxMosier/ica/ica10.html)
-- [ICA11](https://maxmosier.github.io/MaxMosier/ica/ica10.html)
-- ICA12
-- ICA13
+- [ICA11](https://maxmosier.github.io/MaxMosier/ica/ica11.html)
+- [ICA12](https://maxmosier.github.io/MaxMosier/ica/ica12.html)
+- ICA13 : ∄
 - ICA14
 - ICA15
 ## Weekly Assignments
@@ -36,6 +36,6 @@
 - [WA9](https://maxmosier.github.io/MaxMosier/wa/wa9.html)
 - [WA10](https://maxmosier.github.io/MaxMosier/wa/wa10.html)
 - [WA11](https://maxmosier.github.io/MaxMosier/wa/wa11.html)
-- WA12
-- WA13
+- [WA12](https://maxmosier.github.io/MaxMosier/wa/wa12.html)
+- [WA13](https://maxmosier.github.io/MaxMosier/wa/wa13.html)
 - WA14
