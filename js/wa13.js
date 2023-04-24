@@ -65,7 +65,7 @@ function updateVolumeBar(volume) {
 let videoId = "9Oid6F4Aox8"; // <------------------------------------------------------------- YT ID!
 // Get the YouTube ID by grabbing all characters between (?v=, &)
 
-// Make an invisuble, auto-playing, looping YouTube video:
+// Make an invisible, auto-playing, looping YouTube video:
 function onYouTubeIframeAPIReady() {
 	ytPlayer = new YT.Player("ytPlayer", {
 		height: "0",
@@ -81,13 +81,20 @@ function onYouTubeIframeAPIReady() {
 		},
 		events: {
 			onReady: onPlayerReady,
+			onError: ytErrorLogger,
 		},
 	});
 }
 
+// Called when video is ready:
 function onPlayerReady(event) {
 	// Initialize this with no volume
 	event.target.setVolume(0);
+}
+
+// Called when an error is encountered in getting the video. Should give a detailed message on what happened (But we'll see...):
+function ytErrorLogger(errorMessage){
+	console.log("Encountered the following video error: " + errorMessage.data);
 }
 
 // This will be used as a workaround for autoplay restrictions:
