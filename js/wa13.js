@@ -62,7 +62,7 @@ function updateVolumeBar(volume) {
 }
 
 // SET THE YOUTUBE ID HERE
-let videoId = "9Oid6F4Aox8"; // <------------------------------------------------------------- YT ID!
+let videoId = "h0v2Wh1GSso"; // <------------------------------------------------------------- YT ID!
 // Get the YouTube ID by grabbing all characters between (?v=, &)
 
 // Make an invisible, auto-playing, looping YouTube video:
@@ -80,8 +80,8 @@ function onYouTubeIframeAPIReady() {
 			fs: 0, // Disable fullscreen button
 		},
 		events: {
-			onReady: onPlayerReady,
-			onError: ytErrorLogger,
+			onReady: onPlayerReady, // Will set the initial conditions. Just volume, for now.
+			onError: ytErrorLogger, //Added later, just in case
 		},
 	});
 }
