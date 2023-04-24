@@ -33,12 +33,6 @@ function remap(
 	);
 }
 
-// Get clicks and add their timestamps to the list:
-tapButton.addEventListener("click", () => {
-	const currentTimestamp = performance.now();
-	recordClick(currentTimestamp);
-});
-
 // Adds the timestaps to the list:
 function recordClick(currentTimestamp) {
 	clickTimestamps.push(currentTimestamp);
@@ -89,7 +83,7 @@ function updateVolumeBar(volume) {
 }
 
 // SET THE YOUTUBE ID HERE
-var videoId = "9Oid6F4Aox8"; // <------------------------------------------------------------- YT ID!
+let videoId = "9Oid6F4Aox8"; // <------------------------------------------------------------- YT ID!
 // Get the YouTube ID by grabbing all characters between (?v=, &)
 
 // Make an invisuble, auto-playing, looping YouTube video:
@@ -116,6 +110,20 @@ function onPlayerReady(event) {
 	// Initialize this with no volume
 	event.target.setVolume(0);
 }
+
+// This will be used as a workaround for autoplay restrictions:
+let isPlaying = false;
+
+// Get clicks and add their timestamps to the list:
+tapButton.addEventListener("click", () => {
+	if (!isPlaying && ytPlayer) {
+		ytPlayer.playVideo();
+		isPlaying = true;
+	}
+
+	const currentTimestamp = performance.now();
+	recordClick(currentTimestamp);
+});
 
 // Start the updateVolume loop
 requestAnimationFrame(updateVolume);
