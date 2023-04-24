@@ -7,39 +7,18 @@ const volumeDisplay = document.getElementById("volumeDisplay");
 // const audioPlayer = document.getElementById("audioPlayer"); // Old relic from MP3-using version.
 let ytPlayer;
 
-// Was using this for previous version of code. Might need it later, and figure it's harmless to keep around:
-function remap(
-	originVal,
-	inputMin,
-	inputMax,
-	outputMin,
-	outputMax,
-	clamp = true
-) {
-	let outputVal = originVal;
-	//Clamp if needed, and do so before remapping, for simplicity:
-	if (clamp) {
-		if (originVal > inputMax) {
-			outputVal = inputMax;
-		}
-		if (originVal < inputMin) {
-			outputVal = inputMin;
-		}
-	}
-	return (
-		((outputVal - inputMin) * (outputMax - outputMin)) /
-			(inputMax - inputMin) +
-		outputMin
-	);
-}
-
 // Adds the timestaps to the list:
 function recordClick(currentTimestamp) {
 	clickTimestamps.push(currentTimestamp);
 }
 
-// Volume functions
+// Takes linear 0-100 and returns exponential:
+function remapVolume(volume){
+	return 100*Math.pow(volume/100,1.5);
+}
+// Above was done to make effects more noticeable
 
+// Volume functions
 let frameCount = 0;
 
 function updateVolume() {
@@ -70,7 +49,7 @@ function updateVolume() {
 function setVolumeTo(volume) {
 	// Audio needs a decimal:
 	if (ytPlayer && ytPlayer.setVolume) {
-		ytPlayer.setVolume(volume);
+		ytPlayer.setVolume(remapVolume(volume));
 	}
 	volumeDisplay.textContent = volume;
 	updateVolumeBar(volume);
