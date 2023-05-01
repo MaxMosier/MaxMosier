@@ -1,10 +1,29 @@
-body {
-    margin: 0;
-    padding: 0;
+html {
+	background-color: #191919;
 }
+body {
+	margin: 0;
+	padding: 0;
+	background-image: repeating-linear-gradient(
+		45deg,
+		rgb(113, 41, 41, 0.3),
+		rgb(113, 41, 41, 0.3) 2em,
+		#0000 2em,
+		#0000 4em
+	);
+	/* background-size: 2em 100%; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
 #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+    position: relative;
+    width: 70vmin;
+    height: 70vmin;
+    box-shadow: 0 0 20px 20px #0003;
+    border: solid rgb(113, 41, 41, .6) 10px;
 }
