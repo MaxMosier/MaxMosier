@@ -22,8 +22,7 @@
 - [ICA11](https://maxmosier.github.io/MaxMosier/ica/ica11.html)
 - [ICA12](https://maxmosier.github.io/MaxMosier/ica/ica12.html)
 - ICA13 : ∄
-- ICA14
-- ICA15
+- ICA14 : Creation of the domain [maxmosier.me](https://maxmosier.me)
 ## Weekly Assignments
 - [WA1](https://maxmosier.github.io/MaxMosier/wa/wa1.html)
 - [WA2](https://maxmosier.github.io/MaxMosier/wa/wa2.html)
@@ -38,4 +37,4 @@
 - [WA11](https://maxmosier.github.io/MaxMosier/wa/wa11.html)
 - [WA12](https://maxmosier.github.io/MaxMosier/wa/wa12.html)
 - [WA13](https://maxmosier.github.io/MaxMosier/wa/wa13.html)
-- WA14
+- [WA14](https://maxmosier.github.io/MaxMosier/wa/wa14.html)
