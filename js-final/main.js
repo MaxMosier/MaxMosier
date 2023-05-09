@@ -4,6 +4,7 @@ var w = window.innerWidth;
 var h = window.innerHeight; 
 
 let pathVisible = true;
+let pathButton;
 
 function updateOtherInfluence(value) {
 	for (let entity of entities) {
@@ -29,6 +30,8 @@ function setup() {
 	slider1.addEventListener('input', (e) => {
   		updateOtherInfluence(e.target.value);
 	});
+
+	pathButton = document.getElementById('path-button');
 }
 
 function draw() {
@@ -62,4 +65,11 @@ function draw() {
 
 function togglePathVisibility() {
 	pathVisible = !pathVisible;
+    if (!pathVisible) {
+		pathButton.style.boxShadow = "";
+		pathButton.textContent = "Paths: Hidden";
+	  } else {
+		pathButton.style.boxShadow = "";
+		pathButton.textContent = "Paths: Shown";
+	  }
 }

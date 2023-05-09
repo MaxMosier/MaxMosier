@@ -40,9 +40,14 @@ html {
 
 #center-content-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+#boxes-container {
+  display: flex;
 }
 
 #settings-box {
@@ -89,13 +94,17 @@ button{
 	margin: 1em;
 	border-radius: 0.5em;
 
-	background-color: #ecdbc1;;
+	background-color: #ecdbc1;
 	border: none;
 
 	cursor: pointer;
 	padding: 0.4em;
 
 	width: 80%;
+}
+
+button.path-visible {
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
 }
 
 #text-container {
@@ -110,7 +119,7 @@ button{
 h1 {
   margin: 0;
   flex-grow: 0;
-  text-shadow: 0 0 1em #000, 0 0 1em #000;
+  text-shadow: 0 0 1em #000, 0 0 1em #000,  0 0 1em #000,  0 0 1em #000,  0 0 0.5em #000;
 }
 
 #scrollable-textbox {
@@ -141,4 +150,8 @@ h1 {
 ::-webkit-scrollbar-thumb:hover {
   background: #eeeeeee0;
   /* box-shadow: 0 0 0.5em 0.1em #aaaaaaf0 */
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
 }
