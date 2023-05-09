@@ -66,6 +66,19 @@ html {
   width: 100%;
 }
 
+.slider-container {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-container p{
+  margin-top: 0;
+  margin-bottom: .2em;
+}
+
 button{
   color: #191919;
   font-style: inherit;
@@ -105,6 +118,10 @@ h1 {
   overflow-y: scroll;
   background-color: hsla(0, 40%, 30%, 0.8);
   flex-grow: 1;
+}
+
+#scrollable-textbox p{
+  margin: 1em;
 }
 
 ::-webkit-scrollbar {
