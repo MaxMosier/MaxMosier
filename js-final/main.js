@@ -3,6 +3,8 @@ let attractors = [];
 var w = window.innerWidth;
 var h = window.innerHeight; 
 
+let pathVisible = true;
+
 function setup() {
 	let window = createCanvas(w,h);
 	window.parent("canvas-container");
@@ -34,10 +36,16 @@ function draw() {
 		attractors.push(new Attractor(mouseX, mouseY, attDirection.heading(), newStrength));
 	}
 	for (let a = 0; a < attractors.length; a++) {
-		// attractors[a].rev();
+		if (pathVisible) {
+			attractors[a].rev();
+		}
 		if (attractors[a].fade()) {
 			attractors.splice(a, 1);
 			a--;
 		}
 	}
+}
+
+function togglePathVisibility() {
+	pathVisible = !pathVisible;
 }
