@@ -49,6 +49,20 @@ html {
   height: 30vh;
   background-color: rgba(187, 87, 87, 0.5);
   margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.slider {
+  width: 80%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 #text-container {
