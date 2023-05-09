@@ -39,7 +39,7 @@ class Entity {
 		}
 		push();
 		noStroke();
-		fill(255, 90);
+		fill(236, 219, 193, 127);
 		translate(this.pos.x, this.pos.y);
 		rotate(this.vel.heading() + PI / 2);
 		beginShape();
@@ -112,7 +112,7 @@ class Attractor {
 	}
 
 	rev() {
-		strokeWeight(3);
+		strokeWeight(map(this.s, 0, 100, 1, 5));
 		stroke(0, 255, 255, map(this.s, 0, 100, 0, 255));
 		let drawLine = createVector(0, 1);
 		drawLine.setHeading(this.a);
