@@ -5,13 +5,13 @@ html {
 	background-color: #191919;
 
 
-	background-image: repeating-linear-gradient(
+	/* background-image: repeating-linear-gradient(
 		var(--line-angle),
 		rgb(113, 41, 41, var(--line-transparency)),
 		rgb(113, 41, 41, var(--line-transparency)) var(--spacing),
 		#0000 var(--spacing),
 		#0000 calc(2* var(--spacing))
-	);
+	); */
 
 	height: 100%;
 
@@ -26,6 +26,10 @@ html {
 	overflow: hidden;
 }
 
+*{
+  user-select: none;
+}
+
 #canvas-container {
 	left: 50%;
 	top: 50%;
@@ -33,26 +37,35 @@ html {
 	position: absolute;
 }
 
-#test-object {
+#center-content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#settings-box {
+  width: 30vh;
+  height: 30vh;
+  background-color: rgba(187, 87, 87, 0.5);
+  margin: 1em;
+}
+
+#text-container {
+  width: 30vh;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
+
+h1 {
   margin: 0;
-  padding: 0;
+  flex-grow: 0;
+}
 
-  position: absolute;
-  left: 0;
-  top: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  --spacing: 3em;
-  --line-transparency: 1;
-  --line-angle: 60deg;
-
-	background-image: repeating-linear-gradient(
-		var(--line-angle),
-		rgb(113, 41, 41, var(--line-transparency)),
-		rgb(113, 41, 41, var(--line-transparency)) var(--spacing),
-		#0000 var(--spacing),
-		#0000 calc(2* var(--spacing))
-	);
+#scrollable-textbox {
+  overflow-y: scroll;
+  background-color: rgba(187, 87, 87, 0.5);
+  flex-grow: 1;
 }
