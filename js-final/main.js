@@ -5,6 +5,12 @@ var h = window.innerHeight;
 
 let pathVisible = true;
 
+function updateOtherInfluence(value) {
+	for (let entity of entities) {
+	  entity.otherInfluence = value;
+	}
+}
+
 function setup() {
 	let window = createCanvas(w,h);
 	window.parent("canvas-container");
@@ -15,6 +21,14 @@ function setup() {
 			new Entity(random(width), random(height), random(2, 6), random(0, 2 * PI))
 		);
 	}
+
+	const slider1 = document.getElementsByClassName('slider')[0];
+	slider1.value = 2;
+	slider1.min = 0;
+	slider1.max = 100;
+	slider1.addEventListener('input', (e) => {
+  		updateOtherInfluence(e.target.value);
+	});
 }
 
 function draw() {
