@@ -34,31 +34,23 @@
 				<div id="text-container">
 					<div id="scrollable-textbox">
 						<p>
-							Project Description: <br>
-							<br>
-							While brainstorming ideas for this project, I was inspired by
-							<a href="https://youtu.be/X-iSQQgOd1A">this video</a> to make some sort of particle-like
-							simulation program. To make it interactive, I decided it would be fun to have the user
-							control the general motions of the "entities," as I call them, using their mouse! Going off
-							of pretty much just that idea, I developed what I have now. Along the way, I made a lot of
-							subjective decisions about certain variables such as the weights of influences of entities
-							on each other, and in part out of being annoyed by having to constantly go and adjust the
-							code to test out different weights, I eventually decided to give the power to control such
-							variables to the user. This, I feel, makes for a slightly more fun page, as well. I could
-							have included a lot more options, but didn't want to overcomplicate things, or do anything
-							that would require a long description, and so settled on a few variables I felt were the
-							easiest to understand. <br><br>
 							How to Use: <br><br>
 
-							On a computer, click and drag your mouse to leave behind a trail the "entities" will follow!
-							By default, there is a visible trail you leave behind (which as you can see slowly fades
-							away). You can click the "Show Drawn Paths" button to toggle this feature.<br><br>
+							On a computer, click and drag your mouse to leave behind a trail of "attractors", which the
+							"entities" will follow! By default, this trail is visible (and as you can see slowly fades
+							away).<br><br>
 
 							When entities get near one another, they begin turning to match the direction of others
-							around them. By default, this happens quite slowly. The "Entity-Entity Influence" slider
-							controls this influence entities have on each others' direction. When at 100% strength, this
-							will result in a lot of clustering, while a strength of 0%, the entities will simply move
-							around loosely.
+							around them. By default, this happens quite slowly. The
+							<span>Entity-Entity Influence</span> slider controls the strength of this effect. At 100%,
+							this will result in a lot of clustering, while at 0%, the entities won't form "flocks."
+							<br><br>
+
+							The <span>Randomize</span> button randomly moves and rotates all existing entities.
+							<br><br>
+
+							Finally, the <span>-10 Entities</span> and <span>+10 Entities</span> buttons either add or remove 10 entities. The
+							entity count is capped at 750, and has a minimum of 10.
 						</p>
 					</div>
 				</div>
