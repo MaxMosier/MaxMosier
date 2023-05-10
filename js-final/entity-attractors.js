@@ -18,7 +18,7 @@ class Entity {
 		this.aRangeMin = 30;
 		this.oRange = 30;
 		this.oRangeMin = 10; // Spacing
-		this.otherInfluence = 2;
+		this.otherInfluence = 10;
 		this.randomRange = radians(2);
 	}
 
