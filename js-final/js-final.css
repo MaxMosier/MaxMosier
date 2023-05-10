@@ -67,11 +67,11 @@ html {
 .slider {
   width: 80%;
 }
-
 .button-container {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  padding: 0 0.5em;
 }
 
 .slider-container {
@@ -103,7 +103,15 @@ button{
 	cursor: pointer;
 	padding: 0.4em;
 
-	width: 80%;
+  width: auto;
+}
+
+.action-button {
+  flex: 1;
+  margin: 0 0.5em;
+  white-space: nowrap;
+  font-size: 0.8em;
+  text-align: center;
 }
 
 button.path-visible {
