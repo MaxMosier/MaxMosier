@@ -1,7 +1,7 @@
 # MaxMosier.github.io
 ## Projects
 - [HTML](https://maxmosier.github.io/MaxMosier/html-midterm/page5.html)
-- [CSS](https://maxmosier.github.io/)
+- [CSS](https://maxmosier.github.io/MaxMosier/css-midterm/aboutme.html)
 - [JS](https://maxmosier.github.io/MaxMosier/js-final/js-final.html)
 ## In-Class Assignments
 - [ICA1](https://github.com/MaxMosier/MaxMosier/blob/ab7533bbc859455b66af315fb005bfd8188c3f4e/ica/ICA1%20%E2%80%93%20How%20to%20Search%20%E2%80%93%20Maximillian%20Mosier-1.pdf)
